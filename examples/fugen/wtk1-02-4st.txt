@@ -1,0 +1,8 @@
+Fuge über WTK I/2, BWV 847, c-Moll
+c 4/4, 4 Stimmen, 38 Takte, 1262 Töne (446 vorgegeben), 12.3 s
+Antwort: r8 g''16 fis''16 g''8 c''8 es''8 g''16 fis''16 g''8 a''8 d''8 g''16 fis''16 g''8 a''8 c''16 d''16 es''4 d''16 c''16 bes'16 (tonal)
+Takte: 1 Thema, 3 Antwort, 5 Codetta, 6 Thema, 8 Antwort, 10 Zwischenspiel, 12 Einsatz (Eb), 14 Einsatz (Bb), 17 Zwischenspiel, 19 Einsatz (f), 21 Einsatz (Ab), 24 Zwischenspiel, 26 Einsatz (g), 28 Einsatz (Eb), 31 Zwischenspiel, 33 Schlusseinsatz (c), 36 Kadenz
+Schluss: Orgelpunkt; 11 von 11 Einsätzen wiedergefunden
+0 Verbot(e), Kosten 1503 aus 346 Präferenz(en).
+Kennzahlen in Bachs Bändern: 25 von 29 (Maßstab 18.0)
+Außerhalb: Schläge mit angeschlagener Dissonanz; Schläge mit Dissonanz; Satz: gleichzeitige Anschläge; Klang: vollständiger Dreiklang

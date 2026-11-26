@@ -1,0 +1,36 @@
+# Regelprofil "jeppesen": Abweichungen vom Standardprofil "fux" nach K. Jeppesen, Kontrapunkt.
+# Lehrbuch der klassischen Vokalpolyphonie (Leipzig 1935; englisch: Counterpoint, 1939).
+# Jeppesen beschreibt den Stil Palestrinas und ist darin strenger als Fux, lässt aber die untere
+# Wechselnote zu. Alle Werte sind vorläufig und noch am Lehrbuch zu prüfen; Begründungen in
+# docs/regeln.md, § 15. Was hier nicht steht, gilt wie bei Fux.
+#
+# Laden mit --profile jeppesen (oder in der GUI unter „Regeln …“).
+
+name = "jeppesen"
+
+# Melodik
+
+[MEL-MIN6-DOWN]
+level = "V"            # die kleine Sexte nur aufwärts
+
+[MEL-LEAP-RECOVERY]
+level = "P3"           # große Sprünge werden durch Gegenbewegung ausgeglichen (Fux: P2)
+
+[MEL-CONSEC-LEAPS]
+larger_above = "P2"    # zwei Sprünge in dieselbe Richtung: der größere unten; eine Tendenz, auch
+                       # bei Palestrina 272 von 2867 Dreiklangsbrechungen mit dem größeren oben
+
+# Dritte und fünfte Gattung
+
+[G3-PASSING]
+neighbor_two_voices = "aus"   # untere Wechselnote auf unbetontem Viertel frei (Fux: V)
+neighbor = "aus"              # ab drei Stimmen (Fux: P3)
+
+[G5-PASSING]
+neighbor = "aus"       # untere Wechselnote in Vierteln (Fux: P3)
+
+[G3-ACCENTED-PASSING]
+level = "V"            # betonter Durchgang (3. Viertel) nur abwärts (Fux: frei)
+
+[G3-ACCENT-LEAP]
+level = "V"            # kein Sprung aufwärts von einem betonten Viertel (Fux: frei)

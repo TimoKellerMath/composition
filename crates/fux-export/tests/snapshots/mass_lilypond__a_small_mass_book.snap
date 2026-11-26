@@ -1,0 +1,223 @@
+---
+source: crates/fux-export/tests/mass_lilypond.rs
+expression: text
+---
+\version "2.24.0"
+\language "nederlands"
+
+#(set-global-staff-size 18)
+
+\header {
+  tagline = ##f
+}
+
+\paper {
+  #(set-paper-size "a4")
+  min-systems-per-page = #2
+}
+
+\layout {
+  \context {
+    \Lyrics
+    \override LyricHyphen.minimum-distance = #0.5
+    \override VerticalAxisGroup.nonstaff-unrelatedstaff-spacing.minimum-distance = #7
+  }
+}
+
+\bookpart {
+\header { title = "Missa brevis"
+  subtitle = "dorisch, A T B"
+  composer = "fux-kontrapunkt, Seed 1"
+}
+\markup \fill-line { \override #'(font-size . 4) \bold "Kyrie" }
+\markup \fill-line { \center-column { \italic "Kyrie I, Christe und Kyrie II stehen je für drei Anrufungen" \italic "(Wiederholung oder Wechsel mit dem Choral nach Ortsbrauch)." } }
+
+\score {
+  \header { piece = "Kyrie I" }
+  \new StaffGroup <<
+    \new Staff = "staff0" \with { instrumentName = "Alt" shortInstrumentName = "A" }
+    \new Voice = "voice0" {
+      \key d \dorian \time 2/2 \clef "treble"
+      d'1\startGroup^\markup \small "1" | f'2 g'2 | a'1~ | a'2\stopGroup g'2 | f'2 e'2~ | e'4 d'4 d'2~ | d'2 \once \set suggestAccidentals = ##t cis'2 | d'1\fermata
+      \bar "||"
+    }
+    \new Lyrics = "text0" \lyricsto "voice0" { "Ký" -- "ri" -- "e" __ _ "e" -- "lé" -- _ _ "i" -- _ "son." }
+    \new Staff = "staff1" \with { instrumentName = "Tenor" shortInstrumentName = "T" }
+    \new Voice = "voice1" {
+      \key d \dorian \time 2/2 \clef "treble_8"
+      r1 | a1\startGroup^\markup \small "1" | c'2 d'2 | e'1~ | e'2\stopGroup d'2~ | d'4 c'4 b2 | a1~ | a1\fermata
+      \bar "||"
+    }
+    \new Lyrics = "text1" \lyricsto "voice1" { "Ký" -- "ri" -- "e" "e" -- "lé" -- _ "i" -- "son." __ }
+    \new Staff = "staff2" \with { instrumentName = "Bass" shortInstrumentName = "B" }
+    \new Voice = "voice2" {
+      \key d \dorian \time 2/2 \clef "bass"
+      r1 | r1 | d1\startGroup^\markup \small "1" | f2 g2 | a1~ | a2\stopGroup g2 | a1 | d1\fermata
+      \bar "||"
+    }
+    \new Lyrics = "text2" \lyricsto "voice2" { "Ký" -- "ri" -- "e" "e" -- "lé" -- "i" -- "son." }
+  >>
+  \layout {
+    \context {
+      \Voice
+      \consists "Horizontal_bracket_engraver"
+      \override HorizontalBracket.direction = #UP
+      \override TextScript.outside-staff-priority = #1000
+    }
+  }
+}
+
+\score {
+  \header { piece = "Christe" }
+  \new StaffGroup <<
+    \new Staff = "staff0" \with { instrumentName = "Alt" shortInstrumentName = "A" }
+    \new Voice = "voice0" {
+      \set Score.currentBarNumber = #9
+      \key d \dorian \time 2/2 \clef "treble"
+      a'1 | g'2 f'2 | e'2 fis'2~ | fis'4 g'4 f'2 | e'1~ | e'1\fermata
+      \bar "||"
+    }
+    \new Lyrics = "text0" \lyricsto "voice0" { "Chri" -- "ste" "e" -- "lé" -- _ _ "i" -- "son." __ }
+    \new Staff = "staff1" \with { instrumentName = "Tenor" shortInstrumentName = "T" }
+    \new Voice = "voice1" {
+      \key d \dorian \time 2/2 \clef "treble_8"
+      r1 | d'1 | c'2 a2 | d'2 c'2~ | c'2 b2 | a1\fermata
+      \bar "||"
+    }
+    \new Lyrics = "text1" \lyricsto "voice1" { "Chri" -- "ste" "e" -- "lé" -- "i" -- _ "son." }
+  >>
+  \layout { }
+}
+
+\score {
+  \header { piece = "Kyrie II" }
+  \new StaffGroup <<
+    \new Staff = "staff0" \with { instrumentName = "Alt" shortInstrumentName = "A" }
+    \new Voice = "voice0" {
+      \set Score.currentBarNumber = #15
+      \key d \dorian \time 2/2 \clef "treble"
+      r1
+      \bar "|."
+    }
+    \new Staff = "staff1" \with { instrumentName = "Tenor" shortInstrumentName = "T" }
+    \new Voice = "voice1" {
+      \key d \dorian \time 2/2 \clef "treble_8"
+      r1
+      \bar "|."
+    }
+    \new Staff = "staff2" \with { instrumentName = "Bass" shortInstrumentName = "B" }
+    \new Voice = "voice2" {
+      \key d \dorian \time 2/2 \clef "bass"
+      r1
+      \bar "|."
+    }
+  >>
+  \layout { }
+}
+\markup \column {
+  \line { "Teil kyrie/3 fehlt: nicht gesetzt." }
+  \line { "fux mass --resume mit denselben Angaben setzt fehlende Teile nach." }
+}
+}
+
+\bookpart {
+\markup \fill-line { \override #'(font-size . 4) \bold "Gloria" }
+\markup \fill-line { \center-column { \italic "Intonatio: Glória in excélsis Deo." } }
+
+\score {
+  \header { piece = "Et in terra pax" }
+  \new StaffGroup <<
+    \new Staff = "staff0" \with { instrumentName = "Alt" shortInstrumentName = "A" }
+    \new Voice = "voice0" {
+      \key d \dorian \time 2/2 \clef "treble"
+      a'2 a'2 | g'2 a'2~ | a'2 g'2 | a'1 | r2 a'2 | a'2 \once \set suggestAccidentals = ##t bes'2~ | \once \set suggestAccidentals = ##t bes'2 a'2 | g'2 a'2~ | a'1 | r1 | \mark \markup \italic "Qui tollis" a'2 a'2 | g'2 f'2 | e'2 d'2 | e'2 f'2~ | f'2 e'2 | d'1\fermata
+      \bar "|."
+    }
+    \new Lyrics = "text0" \lyricsto "voice0" { "Lau" -- "dá" -- "mus" "te." __ _ _ "Be" -- "ne" -- "dí" -- "ci" -- "mus" "te." __ "Qui" "tol" -- "lis" "pec" -- "cá" -- "ta" "mun" -- "di," __ _ _ }
+    \new Staff = "staff1" \with { instrumentName = "Tenor" shortInstrumentName = "T" }
+    \new Voice = "voice1" {
+      \key d \dorian \time 2/2 \clef "treble_8"
+      d'2 d'2 | c'2 d'2~ | d'2 c'2 | d'1 | r2 f'2 | f'2 d'2 | g'2 f'2~ | f'2 e'2 | d'1 | r1 | d'2 d'2 | d'2 a2 | c'2 b2 | c'2 a2 | a1~ | a1\fermata
+      \bar "|."
+    }
+    \new Lyrics = "text1" \lyricsto "voice1" { "Lau" -- "dá" -- "mus" "te." __ _ _ "Be" -- "ne" -- "dí" -- "ci" -- "mus" __ "te." __ _ "Qui" "tol" -- "lis" "pec" -- "cá" -- "ta" "mun" -- "di," __ _ }
+    \new Staff = "staff2" \with { instrumentName = "Bass" shortInstrumentName = "B" }
+    \new Voice = "voice2" {
+      \key d \dorian \time 2/2 \clef "bass"
+      d2 d2 | e2 f2 | g2 a2 | d1 | r2 d2 | d2 g2 | g2 d2 | g2 a2 | d1 | r1 | d2 f2 | g2 d2 | a2 g2 | c2 f2 | d1~ | d1\fermata
+      \bar "|."
+    }
+    \new Lyrics = "text2" \lyricsto "voice2" { "Lau" -- "dá" -- "mus" "te." __ _ _ _ "Be" -- "ne" -- "dí" -- "ci" -- "mus" "te." __ _ _ "Qui" "tol" -- "lis" "pec" -- "cá" -- "ta" "mun" -- "di," __ _ }
+  >>
+  \layout { }
+}
+}
+
+\bookpart {
+\markup \fill-line { \override #'(font-size . 4) \bold "Agnus Dei" }
+\markup \fill-line { \center-column { \italic "Agnus Dei I gilt für die erste und zweite Anrufung," \italic "Agnus Dei II (dona nobis pacem) für die dritte." } }
+
+\score {
+  \header { piece = "Agnus Dei I" }
+  \new StaffGroup <<
+    \new Staff = "staff0" \with { instrumentName = "Alt" shortInstrumentName = "A" }
+    \new Voice = "voice0" {
+      \key d \dorian \time 2/2 \clef "treble"
+      d'2 f'2 | g'2 a'2~ | a'2 g'2 | a'1\fermata
+      \bar "||"
+    }
+    \new Lyrics = "text0" \lyricsto "voice0" { "A" -- "gnus" "De" -- "i," __ _ _ }
+    \new Staff = "staff1" \with { instrumentName = "Tenor 1" shortInstrumentName = "T1" }
+    \new Voice = "voice1" {
+      \key d \dorian \time 2/2 \clef "treble_8"
+      a2 d'2 | d'2 c'2~ | c'2 b2 | a1\fermata
+      \bar "||"
+    }
+    \new Lyrics = "text1" \lyricsto "voice1" { "A" -- "gnus" "De" -- "i," __ _ _ }
+    \new Staff = "staff3" \with { instrumentName = "Bass" shortInstrumentName = "B" }
+    \new Voice = "voice3" {
+      \key d \dorian \time 2/2 \clef "bass"
+      d2 d2 | g2 a2 | f2 g2 | d1\fermata
+      \bar "||"
+    }
+    \new Lyrics = "text3" \lyricsto "voice3" { "A" -- "gnus" "De" -- "i," __ _ _ _ }
+  >>
+  \layout { }
+}
+
+\score {
+  \header { piece = "Agnus Dei II" }
+  \new StaffGroup <<
+    \new Staff = "staff0" \with { instrumentName = "Alt" shortInstrumentName = "A" }
+    \new Voice = "voice0" {
+      \set Score.currentBarNumber = #5
+      \key d \dorian \time 2/2 \clef "treble"
+      a'1 | g'2 f'2 | e'2 d'2~ | d'2 \once \set suggestAccidentals = ##t cis'2 | d'1\fermata
+      \bar "|."
+    }
+    \new Lyrics = "text0" \lyricsto "voice0" { "do" -- "na" "no" -- "bis" "pa" -- _ "cem." }
+    \new Staff = "staff1" \with { instrumentName = "Tenor 1" shortInstrumentName = "T1" }
+    \new Voice = "voice1" {
+      \key d \dorian \time 2/2 \clef "treble_8"
+      f'1 | e'2 d'2 | c'2 b2 | a1~ | a1\fermata
+      \bar "|."
+    }
+    \new Lyrics = "text1" \lyricsto "voice1" { "do" -- "na" "no" -- "bis" "pa" -- "cem." __ }
+    \new Staff = "staff2" \with { instrumentName = "Tenor 2" shortInstrumentName = "T2" }
+    \new Voice = "voice2" {
+      \key d \dorian \time 2/2 \clef "treble_8"
+      d'1 | c'2 a2 | g2 f2~ | f2 e2 | f1\fermata
+      \bar "|."
+    }
+    \new Lyrics = "text2" \lyricsto "voice2" { "do" -- "na" "no" -- "bis" "pa" -- "cem." __ _ }
+    \new Staff = "staff3" \with { instrumentName = "Bass" shortInstrumentName = "B" }
+    \new Voice = "voice3" {
+      \key d \dorian \time 2/2 \clef "bass"
+      d1 | e2 f2 | c2 d2 | a,1 | d1\fermata
+      \bar "|."
+    }
+    \new Lyrics = "text3" \lyricsto "voice3" { "do" -- "na" "no" -- "bis" "pa" -- "cem." __ _ }
+  >>
+  \layout { }
+}
+}

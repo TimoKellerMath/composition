@@ -1,0 +1,8 @@
+Fuge über WTK II/9, BWV 878, E-Dur
+E 4/2, 4 Stimmen, 39 Takte, 917 Töne (230 vorgegeben), 8.8 s
+Antwort: b1 cis'2 e'2 dis'2 cis'2 b4 (real)
+Takte: 1 Thema, 2 Antwort, 4 Codetta, 5 Thema, 6 Antwort, 8 Zwischenspiel, 10 Einsatz (c#), 11 Einsatz (g#), 14 Zwischenspiel, 16 Einsatz (A), 17 Einsatz (f#), 20 Zwischenspiel, 22 Einsatz (B), 23 Einsatz (c#), 26 Zwischenspiel, 28 Einsatz (g#), 29 Einsatz (A), 32 Zwischenspiel, 34 Engführung (E), 37 Kadenz
+Schluss: Engführung im Abstand von 0.5 Takten; 14 von 14 Einsätzen wiedergefunden
+0 Verbot(e), Kosten 1539 aus 343 Präferenz(en).
+Kennzahlen in Bachs Bändern: 25 von 29 (Maßstab 18.0)
+Außerhalb: Notenwerte: Viertel und länger; Noten je Stimme und Viertel; Satz: Sechzehntel-Raster besetzt; Stimmkreuzungen je 100 Schläge

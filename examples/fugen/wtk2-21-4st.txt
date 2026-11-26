@@ -1,0 +1,8 @@
+Fuge über WTK II/21, BWV 890, B-Dur
+Bb 3/4, 4 Stimmen, 44 Takte, 870 Töne (360 vorgegeben), 7.2 s
+Antwort: r8 g''8 f''8 e''8 f''8 c''8 a'8 d''8 c''8 bes'8 c''8 a'8 f'8 bes'8 bes'8 a'8 a'8 g'8 g'8 c''8 c''8 bes'8 bes'8 a'8 a'4 (real)
+Takte: 1 Thema, 5 Antwort, 9 Codetta, 10 Thema, 14 Antwort, 18 Zwischenspiel, 21 Einsatz (g), 26 Zwischenspiel, 29 Einsatz (Eb), 34 Zwischenspiel, 37 Schlusseinsatz (Bb), 42 Kadenz
+Schluss: Orgelpunkt; 7 von 7 Einsätzen wiedergefunden
+0 Verbot(e), Kosten 1470 aus 361 Präferenz(en).
+Kennzahlen in Bachs Bändern: 22 von 29 (Maßstab 18.0)
+Außerhalb: Notenwerte: Achtel; Notenwerte: Viertel und länger; Melodik: Tonwiederholung; Melodik: Sekunde; Melodik: Richtungswechsel; Schläge mit Dissonanz; Satz: gleichzeitige Anschläge

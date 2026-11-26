@@ -1,0 +1,14 @@
+dorisch – freier Satz, 4 Stimmen, 25 Takte, seed 5
+Text: Kyrie I (7 Silben, 1 Sinnabschnitt), Wiederholung auto
+Binnenschlüsse: Takt 17 auf A: …e-lé-i-son.
+Punkt 1 („Ký-ri-e e-lé-i-son.“): Alt T. 1 D4 · Bass T. 3 D3 (Unteroktave) · Sopran T. 5 A4 (Quinte) · Tenor T. 10 A3 (Unterquarte); Kopf 4–7 Töne, real; Binnenschluss T. 17 auf A
+Punkt 2 („e-lé-i-son.“): Tenor T. 18½ D3 · Alt T. 19½ A3 (Quinte); Kopf 5 Töne, real; Schluss T. 25 auf D
+ 1. Kosten 47
+      Sopran: r | r | r | r | A4 | C5 D5 | E5 | D5 C5 | D5 | D5 C5 Bb4 A4 | F4 | G4 A4 C5~ | C5 Bb4 C5~ | C5 A4 Bb4~ | Bb4 A4~ | A4 G#4 | A4 | r D4~ | D4 C4 D4 | C4 E4 | D4 | F4 E4 D4 C4 | D4 D4~ | D4 C#4 | D4
+        Text: Ký-ri-e e-lé-i-son. e-lé-i-son.
+      Alt: D4 | F4 G4 | A4 | A4 G4 E4~ | E4 F4 E4~ | E4 G4 F4 | G4 E4 | r A4 | G4 A4 | F4 | r | r | r A4~ | A4 F4 | F4 | E4 D4 C4 B3 | C4 A3 | G3 | r A3 | A3 | B3 B3 | C4~ | C4 Bb3 | A3 A3 | F#3
+        Text: Ký-ri-e e-lé-i-son. e-lé-i-son. e-lé-i-son. e-lé-i-son. e-lé-i-son.
+      Tenor: r | r | r | r | r | r | r | r | r | A3 | C4 D4 | E4 | D4 C4 | D4 | D4 | B3 | A3 | r D3 | D3 | E3 E3 | F3 | A3 | Bb3 A3 G3 | E3 | D3
+        Text: Ký-ri-e e-lé-i-son. e-lé-i-son.
+      Bass: r | r | D3 | F3 G3 | A3 | E3 F3 | E3 E3 | B3 A3~ | A3 G3 D3~ | D3 E3 F3~ | F3 F3 Bb3~ | Bb3 A3 | Bb3 A3 | F3 | F3 D3 | E3 | A2 | B2 | r | A2~ | A2 G2 | F2 C3 | Bb2 G2 | A2 | D3
+        Text: Ký-ri-e e-lé-i-son. Ký-ri-e e-lé-i-son. e-lé-i-son.

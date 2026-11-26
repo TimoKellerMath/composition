@@ -1,0 +1,30 @@
+[package]
+name = "fux-core"
+description = "Music theory core, rules and search for species counterpoint after Fux"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[features]
+default = ["parallel"]
+# Evaluates the candidates of a search step on all cores (off for WebAssembly).
+parallel = ["dep:rayon"]
+
+[dependencies]
+rayon = { workspace = true, optional = true }
+serde.workspace = true
+smallvec.workspace = true
+thiserror.workspace = true
+toml.workspace = true
+
+[dev-dependencies]
+criterion.workspace = true
+
+[[bench]]
+name = "search"
+harness = false
+
+[lints]
+workspace = true

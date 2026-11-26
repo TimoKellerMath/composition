@@ -1,0 +1,682 @@
+:root {
+  --bg: #f6f4ef;
+  --panel: #ffffff;
+  --text: #1f1d1a;
+  --muted: #6b665e;
+  --line: #d9d4ca;
+  --accent: #7a3b1d;
+  --accent-text: #ffffff;
+  --forbidden: #b3261e;
+  --warning: #8a5300;
+  --paper: #ffffff;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 15px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1b1a18;
+    --panel: #252320;
+    --text: #ece8e1;
+    --muted: #a39d93;
+    --line: #3d3a35;
+    --accent: #d9875b;
+    --accent-text: #1b1a18;
+    --forbidden: #ff8a80;
+    --warning: #e6b45c;
+    --paper: #fbfaf7;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Elements that the page hides stay hidden whatever their display. */
+[hidden] {
+  display: none !important;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  display: grid;
+  grid-template-columns: 330px minmax(0, 1fr) 340px;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header header header"
+    "task main report"
+    "footer footer footer";
+}
+
+header {
+  grid-area: header;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 24px;
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--line);
+  background: var(--panel);
+}
+
+h1 {
+  font-size: 1.15rem;
+  margin: 0;
+}
+
+h2 {
+  font-size: 1rem;
+  margin: 0 0 8px;
+}
+
+nav button {
+  border: none;
+  background: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  color: var(--text);
+  cursor: pointer;
+  font: inherit;
+}
+
+nav button.active {
+  background: var(--accent);
+  color: var(--accent-text);
+}
+
+.settings {
+  margin-left: auto;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+#task,
+#report {
+  padding: 12px 16px;
+  overflow-y: auto;
+  background: var(--panel);
+}
+
+#task {
+  grid-area: task;
+  border-right: 1px solid var(--line);
+}
+
+#report {
+  grid-area: report;
+  border-left: 1px solid var(--line);
+}
+
+main {
+  grid-area: main;
+  padding: 12px 16px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+footer {
+  grid-area: footer;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 16px;
+  padding: 6px 16px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.85rem;
+  background: var(--panel);
+}
+
+/* The status on the left, the credits and the site's pages on the right. */
+#status {
+  margin-right: auto;
+}
+
+.legal {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.legal > li:not(:last-child)::after {
+  content: "|";
+  content: "|" / ", ";
+  margin-inline: 0.5em;
+}
+
+a {
+  color: var(--accent);
+}
+
+fieldset {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  margin: 0 0 12px;
+  padding: 8px 10px;
+}
+
+legend {
+  font-weight: 600;
+  padding: 0 4px;
+}
+
+.task label {
+  display: block;
+  margin: 6px 0;
+}
+
+.task .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 6px 0;
+}
+
+.task .row > label {
+  margin: 0;
+}
+
+.task .inline {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.task .inline label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin: 0;
+}
+
+.task .help {
+  color: var(--muted);
+  margin: 0 0 10px;
+}
+
+.task .hint {
+  display: block;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.task .warning {
+  color: var(--warning);
+  font-size: 0.9rem;
+  margin: 6px 0;
+}
+
+#free-own {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+#free-from,
+#free-to {
+  width: 4.5em;
+}
+
+#free-order,
+#free-intervals,
+#free-delays,
+#free-phrases {
+  width: 9em;
+}
+
+#free-entries summary {
+  cursor: pointer;
+  margin: 6px 0;
+}
+
+#free-plan {
+  margin: 6px 0 2px;
+}
+
+.preview {
+  margin: 8px 0 2px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: var(--bg);
+  font-size: 0.9rem;
+  max-height: 18em;
+  overflow-y: auto;
+}
+
+.preview:empty {
+  display: none;
+}
+
+.preview p {
+  margin: 4px 0;
+}
+
+.preview ol {
+  margin: 4px 0;
+  padding-left: 1.8em;
+}
+
+.preview .head {
+  font-weight: 600;
+}
+
+.preview .error {
+  color: var(--forbidden);
+}
+
+textarea,
+select,
+input[type="number"],
+input[type="text"],
+input[list] {
+  font: inherit;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 4px 6px;
+  max-width: 100%;
+}
+
+textarea,
+#cp-fux,
+#free-text,
+#check-text,
+#example-figure,
+#rule-search {
+  width: 100%;
+}
+
+textarea {
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-size: 0.9rem;
+}
+
+input[type="number"] {
+  width: 6em;
+}
+
+button {
+  font: inherit;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  color: var(--text);
+  border-radius: 6px;
+  padding: 5px 12px;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+input:disabled {
+  opacity: 0.6;
+}
+
+button.primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-text);
+  font-weight: 600;
+  margin: 8px 8px 8px 0;
+}
+
+.seed {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin: 6px 0;
+}
+
+#rules {
+  margin-top: 16px;
+  border-top: 1px solid var(--line);
+  padding-top: 8px;
+}
+
+#rules p {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+#storage {
+  margin-top: 12px;
+  border-top: 1px solid var(--line);
+  padding-top: 8px;
+  font-size: 0.9rem;
+}
+
+#storage label {
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* The form of a mass. */
+
+#mass-movements label {
+  display: inline-block;
+  margin: 2px 12px 2px 0;
+}
+
+#mass-parts,
+#mass-title {
+  width: 11em;
+}
+
+#mass-chunk {
+  width: 5em;
+}
+
+#mass-sections-box summary {
+  cursor: pointer;
+  margin: 6px 0;
+}
+
+.sections {
+  font-size: 0.85rem;
+}
+
+.sections .movement {
+  font-weight: 600;
+  margin: 8px 0 2px;
+}
+
+.sections .section {
+  padding: 3px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.sections .section.break {
+  padding-left: 1.2em;
+}
+
+.sections .head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.sections .head input {
+  width: 8.5em;
+  font-size: inherit;
+}
+
+.task .sections .choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 10px;
+}
+
+.task .sections .choices label {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin: 2px 0;
+}
+
+.task .sections select {
+  font-size: inherit;
+  padding: 1px 4px;
+}
+
+.task .sections .hint {
+  margin: 2px 0;
+}
+
+/* A mass being set: a line per part. */
+
+#mass-run {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 8px 10px;
+  background: var(--panel);
+}
+
+#mass-run .run-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+#mass-run .spacer {
+  flex: 1;
+}
+
+#mass-progress {
+  width: 100%;
+  margin: 8px 0 4px;
+}
+
+#mass-list {
+  margin: 4px 0 0;
+  padding-left: 1.8em;
+  max-height: 14em;
+  overflow-y: auto;
+  font-size: 0.85rem;
+}
+
+#mass-list li {
+  padding: 2px 0;
+}
+
+/* The line of a part shows it once it is set: a button that reads as text. */
+#mass-list .line {
+  border: none;
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  text-align: left;
+  color: var(--text);
+}
+
+#mass-list .line:disabled {
+  opacity: 1;
+}
+
+#mass-list progress {
+  width: 5em;
+  height: 0.7em;
+  vertical-align: middle;
+  margin: 0 6px;
+}
+
+#mass-list .state {
+  color: var(--muted);
+}
+
+#mass-list li.running .state {
+  color: var(--accent);
+}
+
+#mass-list li.done .line {
+  color: var(--muted);
+}
+
+#mass-list li.done .line:hover {
+  text-decoration: underline;
+}
+
+/* The part that the results show on its own. */
+#mass-list li[aria-current="true"] .line {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+#mass-list li.failed .state,
+#mass-list li.broken .state {
+  color: var(--forbidden);
+}
+
+#mass-list li.warned .state {
+  color: var(--warning);
+}
+
+#summary {
+  color: var(--muted);
+  white-space: pre-line;
+  min-height: 1.2em;
+}
+
+/* Over the notation of a part of a mass shown on its own. */
+#part-alone {
+  margin: 0;
+  color: var(--muted);
+}
+
+#results {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+#results button[aria-selected="true"] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-text);
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.toolbar .spacer {
+  flex: 1;
+}
+
+.paper {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 8px;
+  min-height: 200px;
+  overflow-x: auto;
+}
+
+.paper svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.paper .hint {
+  color: #6b665e;
+  padding: 16px;
+}
+
+#text {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 10px;
+  overflow-x: auto;
+}
+
+#violations {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0;
+}
+
+#violations li {
+  padding: 6px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.9rem;
+}
+
+#violations .level {
+  display: inline-block;
+  min-width: 2.2em;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+#violations .forbidden .level {
+  color: var(--forbidden);
+}
+
+#violations .rule {
+  float: right;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+#violations .message {
+  display: block;
+  color: var(--muted);
+}
+
+body.busy #status::before {
+  content: "";
+  display: inline-block;
+  width: 0.8em;
+  height: 0.8em;
+  margin-right: 6px;
+  border: 2px solid var(--accent);
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  vertical-align: -0.1em;
+}
+
+#status.error {
+  color: var(--forbidden);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 1100px) {
+  body {
+    grid-template-columns: 300px minmax(0, 1fr);
+    grid-template-areas:
+      "header header"
+      "task main"
+      "report report"
+      "footer footer";
+    grid-template-rows: auto 1fr auto auto;
+  }
+
+  #report {
+    border-left: none;
+    border-top: 1px solid var(--line);
+  }
+}
+
+@media (max-width: 720px) {
+  body {
+    display: block;
+  }
+
+  #task,
+  main,
+  #report {
+    padding: 12px 16px;
+  }
+
+  #task {
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .settings {
+    margin-left: 0;
+  }
+}

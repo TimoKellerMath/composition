@@ -1,0 +1,6 @@
+{
+  "name": "fux-kontrapunkt-web",
+  "private": true,
+  "description": "The page of the web version; the scripts are ES modules (for Node.js in the smoke test).",
+  "type": "module"
+}

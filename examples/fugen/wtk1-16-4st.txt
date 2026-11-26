@@ -1,0 +1,8 @@
+Fuge über WTK I/16, BWV 861, g-Moll
+g 4/4, 4 Stimmen, 39 Takte, 1104 Töne (353 vorgegeben), 12.0 s
+Antwort: r8 g'8 bes'8 d'8 cis'4 d'4 r8 e'16 f'16 g'8 f'16 e'16 f'4 (tonal)
+Takte: 1 Thema, 2 Antwort, 4 Codetta, 5 Thema, 6 Antwort, 8 Zwischenspiel, 10 Einsatz (Bb), 11 Einsatz (F), 14 Zwischenspiel, 16 Einsatz (c), 17 Einsatz (Eb), 20 Zwischenspiel, 22 Einsatz (d), 23 Einsatz (Bb), 26 Zwischenspiel, 28 Einsatz (F), 29 Einsatz (c), 32 Zwischenspiel, 34 Engführung (g), 37 Kadenz
+Schluss: Engführung im Abstand von 0.5 Takten; 14 von 14 Einsätzen wiedergefunden
+0 Verbot(e), Kosten 1463 aus 344 Präferenz(en).
+Kennzahlen in Bachs Bändern: 26 von 29 (Maßstab 18.0)
+Außerhalb: Melodik: größere Sprünge; Schläge mit Dissonanz; Satz: gleichzeitige Anschläge

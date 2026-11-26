@@ -1,0 +1,73 @@
+---
+source: crates/fux-export/tests/export.rs
+expression: text
+---
+\version "2.24.0"
+\language "nederlands"
+
+\header {
+  title = "Kyrie"
+  tagline = ##f
+}
+
+\paper {
+  #(set-paper-size "a4")
+}
+
+\layout {
+  \context {
+    \Lyrics
+    \override LyricHyphen.minimum-distance = #0.5
+    \override VerticalAxisGroup.nonstaff-unrelatedstaff-spacing.minimum-distance = #7
+  }
+}
+
+\score {
+  \header { piece = "Kyrie – dorisch – mit Akzenten" }
+  \new StaffGroup <<
+    \new Staff = "staff0" \with { instrumentName = "Sopran" shortInstrumentName = "S" }
+    \new Voice = "voice0" {
+      \key d \dorian \time 2/2 \clef "treble"
+      a'2 d''2 | c''2 b'4 a'4 | b'2 r2 | d''2 c''4 b'4 | c''2 d''2~ | d''4 b'4 cis''2 | d''1
+      \bar "|."
+    }
+    \new Lyrics = "text0" \lyricsto "voice0" { "Ký" -- "ri" -- "e" __ _ _ _ "e" -- "lé" -- _ "i" -- "son." __ _ _ _ }
+    \new Lyrics \with { alignBelowContext = "text0" } \lyricmode {
+      \override LyricText.font-size = #-1
+      \skip 2 "8"2 "5"2 "3"4 "2"4 "6"2 \skip 4 \skip 4 "5"2 "3"4 "2"4 "3"4 "4"4 "6"2 "5"4 "3"4 "6"2 "8"1
+    }
+    \new Staff = "staff1" \with { instrumentName = "Tenor" shortInstrumentName = "T" }
+    \new Voice = "voice1" {
+      \key d \dorian \time 2/2 \clef "treble_8"
+      r2 d'2 | f'2 g'2 | d'2 e'4 f'4 | g'2 a'2~ | a'4 g'4 f'2 | g'2 e'2 | d'1
+      \bar "|."
+    }
+    \new Lyrics = "text1" \lyricsto "voice1" { "Ký" -- "ri" -- "e" __ _ _ _ "e" -- "lé" -- _ "i" -- "son." __ _ _ }
+  >>
+  \layout { }
+}
+
+\score {
+  \header { piece = "Kyrie – dorisch – ohne Akzente" }
+  \new StaffGroup <<
+    \new Staff = "staff0" \with { instrumentName = "Sopran" shortInstrumentName = "S" }
+    \new Voice = "voice0" {
+      \key d \dorian \time 2/2 \clef "treble"
+      a'2 d''2 | c''2 b'4 a'4 | b'2 r2 | d''2 c''4 b'4 | c''2 d''2~ | d''4 b'4 cis''2 | d''1
+      \bar "|."
+    }
+    \new Lyrics = "text0" \lyricsto "voice0" { "Ky" -- "ri" -- "e" __ _ _ _ "e" -- "le" -- _ "i" -- "son." __ _ _ _ }
+    \new Lyrics \with { alignBelowContext = "text0" } \lyricmode {
+      \override LyricText.font-size = #-1
+      \skip 2 "8"2 "5"2 "3"4 "2"4 "6"2 \skip 4 \skip 4 "5"2 "3"4 "2"4 "3"4 "4"4 "6"2 "5"4 "3"4 "6"2 "8"1
+    }
+    \new Staff = "staff1" \with { instrumentName = "Tenor" shortInstrumentName = "T" }
+    \new Voice = "voice1" {
+      \key d \dorian \time 2/2 \clef "treble_8"
+      r2 d'2 | f'2 g'2 | d'2 e'4 f'4 | g'2 a'2~ | a'4 g'4 f'2 | g'2 e'2 | d'1
+      \bar "|."
+    }
+    \new Lyrics = "text1" \lyricsto "voice1" { "Ky" -- "ri" -- "e" __ _ _ _ "e" -- "le" -- _ "i" -- "son." __ _ _ }
+  >>
+  \layout { }
+}

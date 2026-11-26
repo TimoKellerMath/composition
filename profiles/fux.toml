@@ -1,0 +1,741 @@
+# Regelprofil "fux": Standardwerte nach Fux' eigenen Beispielen.
+# Begründung und Quellen jeder Regel stehen in docs/regeln.md.
+#
+# Stufen: "aus", "V" (verboten), "P1" … "P4" (Kosten 1, 2, 4, 8) oder eine Zahl als Kosten.
+# Ein eigenes Profil nennt nur, was es ändert, und wird mit --profile geladen.
+# Einzelne Werte ändert --rule ID=STUFE (alle Stufen der Regel) oder --rule ID.PARAMETER=WERT.
+
+name = "fux"
+
+# 1. Cantus firmus
+
+[CF-START]
+level = "V"
+
+[CF-END]
+level = "V"
+
+[CF-PENULT]
+level = "V"
+
+[CF-LENGTH]
+level = "V"
+warning = "P1"
+min = 6
+max = 20
+warn_min = 8
+warn_max = 16
+
+[CF-DIATONIC]
+level = "V"
+
+[CF-RANGE]
+level = "V"
+soft = "P3"
+narrow = "P3"
+max_steps = 9        # Dezime
+soft_max_steps = 7   # Oktave
+min_steps = 4        # Quinte; Korpus: kein Cantus enger
+
+[CF-AMBITUS]
+level = "P2"
+tolerance = 1
+either = true        # authentischer oder plagaler Ambitus
+
+[CF-REPEAT]
+level = "V"
+
+[CF-STEPS]
+level = "P1"
+max_leap_percent = 50
+
+[CF-LEAP-COST]
+third = "aus"
+fourth = "P1"
+fifth = "P2"
+sixth = "P3"
+octave = "P2"
+
+[CF-CLIMAX]
+level = "V"
+at_ends = "V"
+outside_middle = "P2"
+middle_from = 30     # Korpus: Höhepunkte bei 42–64 % der Länge
+middle_to = 75
+
+[CF-VARIETY]
+oscillation = "P1"
+frequent = "P1"
+max_count = 3
+
+[CF-MOTIF]
+level = "P2"
+literal = 4
+transposed = 5
+
+[CF-SOLVABLE]
+level = "V"          # nur beim Erzeugen: 1. Gattung darüber und darunter muss gehen
+
+# 2. Melodik
+
+[MEL-TRITONE]
+level = "V"
+
+[MEL-AUG-DIM]
+level = "V"
+chromatic_two_voices = "V"
+chromatic = "P3"
+
+[MEL-MAX-LEAP]
+level = "V"
+
+[MEL-OCTAVE]
+cantus = "aus"
+g1_two_voices = "V"
+g2_wide = "P3"
+default = "aus"
+
+[MEL-MIN6-DOWN]
+level = "aus"
+free = "V"           # freier Satz; Palestrina: 7×
+
+[MEL-LEAP-COST]
+third = "P1"
+fourth = "P1"
+fifth = "P2"
+sixth = "P2"
+octave = "P1"
+free_third = "aus"        # freier Satz, Palestrina: 11–13 % aller Tonschritte
+free_fourth = "P1"        # Oberstimmen 4–5 %
+free_fifth = "P2"         # Oberstimmen 2–4 %
+free_sixth = "P3"         # 0,1–0,2 %
+free_octave = "P2"        # Oberstimmen 0,4–1 %
+free_bass_fourth = "aus"  # Bass 9,7 %
+free_bass_fifth = "aus"   # Bass 10 %
+free_bass_octave = "P1"   # Bass 1,3 %
+
+[MEL-LEAP-RECOVERY]
+level = "P2"         # vorläufig
+min_steps = 4        # ab der Quinte
+
+[MEL-CONSEC-LEAPS]
+level = "P3"         # vorläufig
+beyond_octave = "V"
+larger_above = "P2"  # Korpus: 10 von 151 Dreiklangsbrechungen
+free = "P3"          # freier Satz: zwei Sprünge in dieselbe Richtung 0,5 % der Dreitonfolgen
+free_turn = "P1"     # freier Satz: zwei Sprünge mit Wende 4,3 %
+
+[MEL-TRITONE-OUTLINE]
+level = "P2"         # vorläufig
+
+[MEL-REPEAT]
+g1 = "P1"
+g2_g4 = "V"
+g5 = "P3"              # Korpus: Fig. 156
+four_voices = "P3"     # Korpus: Fig. 173, 181
+anticipation = "P2"    # Korpus: 3 von 53 Gelegenheiten (Fig. 86a, 87a, 88b)
+free = "P1"            # freier Satz: vorläufig
+free_black = "P1"      # freier Satz, nach einer schwarzen Note außer der Vorausnahme, mit und ohne
+                       # Text: danach beginnt keine neue Silbe (TXT-AFTER-BLACK), die Wiederholung
+                       # bleibt im Melisma. Palestrina: Viertel auf Viertel 1,6 je 1000 Töne (1,4 %
+                       # der Viertelschritte); mit Text gemessen 83 → 2 (vierstimmig, Kyrie bis
+                       # Gloria). Wie free, damit Sätze ohne Text gleich bleiben; vorläufig
+free_run = "P1"        # freier Satz, dritter und weiterer gleicher Ton in Folge, mit und ohne Text:
+                       # mindestens diese Stufe; der Text rechtfertigt eine Wiederholung, kein
+                       # Rezitieren. Palestrina: 2,4 je 100 Stimmtakte; mit Text gemessen 5,0
+                       # (vierstimmig, Kyrie bis Gloria), fünfstimmig 9, mit P1 0,1 und 0,5. Ohne
+                       # Text ändert P1 nichts (free und free_black sind P1); vorläufig
+free_texted = "aus"    # freier Satz, Stimme mit Text, nach einer weißen Note (statt free):
+                       # Palestrinas Tonwiederholungen tragen neue Silben (Jeppesen S. 94);
+                       # TXT-REPEATED-PITCH regelt sie. Gemessen (vierstimmig, Kyrie bis Gloria):
+                       # 17 % der weißen Noten wiederholen den Ton davor (vor free_black 16 %, mit
+                       # free_run P1 13 %, mit P1 statt aus 0,5–1,2 %), bei Palestrina 9–11 %
+
+[MEL-VARIETY]
+g1_within_three_measures = "P1"   # vorläufig
+g3_two_beats = "P1"
+g4_arsis = "P3"
+g5_two_beats = "P1"               # Korpus: 28 von 153
+free_two_beats = "P1"             # freier Satz: vorläufig
+
+[MEL-MOTIF]
+g1 = "P3"
+g2 = "P3"            # Korpus: Fig. 39–41
+g3 = "aus"           # Korpus: häufig
+g4 = "P3"            # Korpus: zweistimmig nie, dreistimmig Fig. 149
+g5 = "aus"           # Korpus: häufig
+free = "aus"         # freier Satz: vorläufig
+notes = 4
+
+[MEL-CLIMAX]
+level = "P1"         # vorläufig
+
+# 7. Stimmen
+
+[VOI-RANGE]
+one_step = "aus"           # darüber; Korpus: Sopran 6 %, Alt 7 % der Töne
+one_step_below = "P3"      # Korpus: 0,8 % der Töne der Gegenstimmen, im Sopran nie
+two_steps = "P2"
+three_steps = "P4"
+more = "V"
+
+# 3. Zusammenklang
+
+[HAR-CONSONANCE]
+level = "V"
+
+[HAR-DISSONANCE]
+level = "V"
+upper_fourths = "aus"     # zwischen Oberstimmen frei (Mann 71)
+cadence_tritone = "aus"   # Gallon/Bitsch Regel 54; Fux Fig. 123, 144, 151, 156
+
+[HAR-CHROMATIC-CLASH]
+level = "V"
+
+[HAR-UNISON]
+level = "V"
+four_voices = "P1"
+more_voices = "aus"       # hochgerechnet; Gallon/Bitsch Regel 53
+free = "P2"               # freier Satz, dreistimmig; Palestrina: 196 Einklänge
+
+[HAR-PERFECT-COST]
+level = "P1"
+
+[HAR-IMPERFECT-RUN]
+two_voices = "V"
+max_two_voices = 3
+more = "P2"
+max_more = 6
+
+# 4. Bewegung
+
+[MOT-DIRECT-PERFECT]
+level = "V"
+
+[MOT-PREFERENCE]
+oblique = "P1"
+similar = "P2"
+
+[MOT-BATTUTA]
+level = "P3"         # vorläufig
+
+[MOT-ANTIPARALLEL]
+level = "P3"
+
+# 5. Anfang und Schluss (zweistimmig)
+
+[CAD-START]
+level = "V"
+
+[CAD-END]
+level = "V"
+
+[CAD-PENULT]
+level = "V"
+
+[CAD-PENULT-G2]
+level = "V"
+sixth = "P4"         # Korpus: nur phrygisch unten, wo die Quinte fehlt (Fig. 37)
+
+[CAD-PENULT-G3]
+level = "P2"         # Fux weicht selbst ab (Fig. 58)
+
+[CAD-PENULT-G4]
+level = "V"
+
+[CAD-PENULT-G5]
+level = "V"
+
+# Binnenschlüsse (Phase 7b): wie der Schluss, bezogen auf das Ziel; bei Fux ohne Beispiele
+
+[CAD-INNER-PENULT]
+level = "V"
+four = "P2"
+bass = "V"
+
+[CAD-INNER-CLAUSULA]
+level = "V"
+doubled = "V"
+
+[CAD-INNER-GOAL]
+level = "V"
+
+# 6. Musica ficta
+
+[FIC-SUBSEMITONIUM]
+level = "V"
+
+[FIC-SCOPE]
+level = "V"
+free_unresolved = "P2"   # freier Satz: erhöhte Terz geht abwärts oder springt (Palestrina: 1 933 von 18 093 erhöhten Noten)
+
+[FIC-INNER-CADENCE]
+level = "P2"
+free = "P2"          # freier Satz: Erhöhung außerhalb einer Klausel (Leitton in die Zählzeit mit Tenor- oder Bassklausel); Palestrina: 8 000 von 18 093 erhöhten Noten, 1,5 % der Takte
+
+[FIC-BFLAT]
+level = "P1"
+free = "aus"         # freier Satz: Palestrina erniedrigt das Mi in allen Modi oft (6 797 Noten)
+
+[FIC-CROSS-RELATION]
+level = "P3"         # vorläufig
+
+[VOI-CROSSING]
+level = "P2"
+four_voices = "P1"
+
+[VOI-SPACING]
+wide = "P2"
+too_wide = "V"
+upper = "P2"
+bass = "P1"
+
+[VOI-OVERLAP]
+level = "P2"         # vorläufig
+
+# 8. Zweite Gattung
+
+[G2-RHYTHM]
+level = "V"
+no_rest = "P2"       # Korpus: 1 von 12 zweistimmigen Beispielen (Fig. 33)
+cadence_tie = "aus"  # ab drei Stimmen (Mann 87 f.)
+late_entry = "V"
+
+[G2-PASSING]
+level = "V"
+
+[G2-DOWNBEAT-MOTION]
+level = "V"
+parallel_many = "V"
+third_skip_many = "aus"   # Mann 86
+
+# 9. Dritte Gattung
+
+[G3-RHYTHM]
+level = "V"
+rest_two_voices = "V"
+rest = "P2"            # Korpus: Fig. 132
+cadence_whole = "P2"   # Korpus: 1 von 14 Stimmen ab drei Stimmen (Fig. 181)
+late_entry = "V"
+
+[G3-RUN]
+level = "V"
+four_voices = "P2"     # Korpus: Fig. 186
+
+[G3-THIRD-QUARTER]
+level = "V"
+four_voices = "P2"     # Korpus: Fig. 186, 204
+
+[G3-PASSING]
+level = "V"
+neighbor_two_voices = "V"
+neighbor = "P3"        # Korpus: Fig. 132, 182
+upper_neighbor_two_voices = "V"   # Korpus: nie
+upper_neighbor = "V"              # Korpus: nie
+
+[G3-CAMBIATA]
+level = "aus"
+
+[G3-ACCENT-PARALLELS]
+level = "P2"
+
+[G3-ACCENTED-PASSING]
+level = "aus"          # Korpus: 24 von 48 betonten Durchgängen aufwärts (Jeppesen-Profil: V)
+free = "V"             # freier Satz; Palestrina: 7×
+
+[G3-ACCENT-LEAP]
+level = "aus"          # Korpus: 63 von 179 Sprüngen von betonten Vierteln aufwärts (Jeppesen-Profil: V)
+free = "V"             # freier Satz; Palestrina: 29×
+
+[G3-TRIAD]
+level = "P1"           # Korpus: 21 von 122 Takten
+
+# 10. Vierte Gattung
+
+[G4-RHYTHM]
+level = "V"
+no_rest = "V"
+rest = "P3"            # ab drei Stimmen gegen verdeckte Quinten (Mann 98); Korpus: 1 von rund 117 Takten (Fig. 151)
+late_entry = "P2"      # Korpus: Fig. 144
+
+[G4-ARSIS]
+level = "V"
+fourth_above_bass = "P3"   # Korpus: Fig. 141
+
+[G4-RESOLUTION]
+level = "V"
+fourth_above_bass = "P3"   # Korpus: Fig. 141
+
+[G4-SUSPENSIONS]
+level = "V"
+free = "P2"                # freier Satz: Palestrina 190×, meist fünf- und sechsstimmig
+
+[G4-OCTAVES]
+level = "V"
+
+[G4-BREAK]
+level = "P4"           # vorläufig
+
+# 11. Fünfte Gattung
+
+[G5-RHYTHM]
+level = "V"            # Taktmuster, die Fux nicht verwendet (als Option P4)
+occasional = "P1"      # bei Fux 3- bis 9-mal
+rare = "P2"            # bei Fux 1- oder 2-mal
+entry_untied = "P1"    # Korpus: 2 von 12 zweistimmigen Beispielen (Fig. 84b, 86b)
+late_entry = "V"
+
+[G5-PASSING]
+level = "V"
+cambiata = "aus"       # Korpus: Fig. 87b
+neighbor = "P3"        # Korpus: zweistimmig 1× (Fig. 86b)
+upper_neighbor = "V"   # Korpus: nie
+
+[G5-EIGHTHS]
+level = "V"
+dissonance = "V"
+turn_two_voices = "V"
+turn = "P1"            # Korpus: dreistimmig Fig. 155, 158
+
+[G5-ORNAMENTED-RES]
+level = "V"
+
+[G5-VARIETY]
+level = "P2"           # vorläufig
+max = 2                # Korpus: zweistimmig höchstens 3 (Fig. 88a)
+same_rhythm = "P2"     # Korpus: 4 von 88 Taktpaaren
+
+# 16. Freier Satz (Palestrina): Standardwerte nach Palestrinas Messen
+
+[FREE-RHYTHM]
+level = "V"            # bei Palestrina nicht belegter Taktrhythmus
+frequent = "aus"       # 1–5 % der Takte
+uncommon = "P1"        # 0,1–1 %
+occasional = "P2"      # 0,01–0,1 %
+rare = "P3"            # 0,001–0,01 %
+very_rare = "P4"       # unter 0,001 %
+
+[FREE-PASSING]
+level = "V"                 # Palestrina: rund 500 seltene Figuren, je höchstens 14× (Ausnahmen)
+cambiata = "aus"            # Palestrina: 875×
+neighbor = "aus"            # untere Wechselnote; Palestrina: 6921×
+upper_neighbor = "P2"       # Palestrina: 222×
+consonant_fourth = "aus"    # Palestrina: 4602×
+anticipation = "P1"         # Palestrina: 220×
+repetition = "P1"           # Palestrina: 120×
+
+[FREE-EIGHTHS]
+level = "V"
+dissonance = "V"
+turn_two_voices = "V"
+turn = "P1"
+
+[FREE-RESOLUTION]
+level = "V"
+fourth_above_bass = "aus"   # vorläufig
+
+[FREE-ENTRY]
+level = "P2"        # erster Ton auf Sekunde, Terz, Sexte oder Septime: je 2–7 %
+fourth = "P1"       # auf der Quarte: 12 % (meist Imitation in der Unterquinte)
+short = "P2"        # erster Ton kürzer als eine Ganze: 8 %
+reentry_short = "P3"  # nach einer Pause kürzer als eine Halbe: 0,7 %
+
+[FREE-LONG]
+level = "P3"        # je Takt, den eine Note über die Brevis hinaus gehalten wird (außer der letzten): 0,47 % der Noten
+over_whole = "P1"   # länger als eine Ganze: 5,3 % der Noten
+
+[FREE-REST]
+level = "P1"        # je Pause nach dem Einsatz: Palestrina pausiert oft (8–19 % der Zeit), die Suche soll es nur, wo es hilft
+texted = "aus"      # in einer Stimme mit Text (statt level): wo sie pausieren darf, regelt der Text
+                    # (TXT-REST). Mit P1 pausierten Stimmen mit Text kaum: 0,09 Pausen je 10
+                    # Stimmtakte, ohne Text 0,31, Palestrina in Sätzen bis 26 Takten 0,30 (98 Sätze,
+                    # Kyrie bis Gloria, zwei- bis fünfstimmig); vorläufig
+
+[FREE-AMBITUS]
+principal = "P3"    # Sopran und Tenor mehr als eine Stufe außerhalb: 0,3–1,4 % der Töne
+collateral = "P2"   # Alt, Bariton und Bass: 0,7–3,3 %
+
+[FREE-TEXTURE]
+level = "P3"        # weniger als die Hälfte der Stimmen klingt: 0,4–2,3 % der Taktanfänge
+silence = "P3"      # keine Stimme klingt: 0,1 %
+
+# 17. Text und Textunterlegung (Phase 12): nach Zarlino (1558), Lanfranco, Vicentino, Stoquerus
+# und Palestrinas Praxis nach Jeppesen. Der Korpus hat keinen Text, deshalb sind alle Werte
+# vorläufig. Ohne Text in der Partitur schweigen die Regeln.
+
+[TXT-ONSET]
+level = "V"            # Achtel, weiße Note oder Viertel zwischen den halben Schlägen (außer dem Daktylus-
+                       # Viertel), Pause, Überbindung: Zarlino 2–3, Stoquerus N2–N3, M2; Einsätze frei
+                       # (Zarlino 7: „qualunque figura“)
+run_upbeat = "P1"      # Viertel auf Zählzeit 2 als Beginn eines Laufs: Stoquerus XXIV.1 („in
+                       # elevatione“); Läufe beginnen bei Palestrina 11 588× auf Zählzeit 2,
+                       # 7 485× auf 1; vorläufig
+single = "V"           # einzelnes textiertes Viertel ohne Lauf, Daktylus-Viertel ohne folgende Halbe
+                       # („qui an-te De-um“): Jeppesen, Regel 2
+figure = "aus"         # unbetonte Silbe im Sinnabschnitt auf dem Daktylus-Viertel erlaubt (Dó-mi-ne):
+                       # Zarlino 6, Lanfranco 5, Vicentino 3, Zacconi (Dominus), Jeppesen, Regel 2
+figure_accent = "P2"   # jede andere Silbe dort (betont, Anfangs- oder Schlusssilbe eines Abschnitts):
+                       # die Figur ist für die kurze Silbe da (Zacconi: Dó-mi-nus); Stoquerus M2
+                       # verbietet die Silbe auf dem Viertel ganz, Palestrina hält die Figur oft auf
+                       # einer Silbe; vorläufig
+opening_black = "P1"   # Anfangssilbe eines Sinnabschnitts oder Schlussteils, auch einer Wiederholung,
+                       # auf einer schwarzen Note (auf einem halben Schlag oder nach einer Pause,
+                       # außer beim ersten Einsatz): Palestrina beginnt sie auf einer Halben oder
+                       # länger (Jeppesen S. 160, 269); vorläufig
+
+[TXT-AFTER-BLACK]
+level = "V"            # neue Silbe direkt nach Vierteln oder Achteln: Stoquerus M3, Vicentino 1,
+                       # Lanfranco 6; Palestrina hält das „bemerkenswert“ ein (Andrews)
+figure = "aus"         # nach dem textierten Daktylus-Viertel: Zarlino 6, Lanfranco 5
+unit_end = "P1"        # letzte Silbe eines Sinnabschnitts auf einer Halben oder länger: Jeppesen,
+                       # Regel 7 („oft geduldet“), Quadflieg VI, Vicentino 2
+dotted = "P3"          # auf einer Halben oder länger nach dem untextierten Viertel einer punktierten
+                       # Halben: Zarlino 4–5 („rare volte“, „non si costuma“) und Stoquerus M3
+                       # halten es für unüblich, Jeppesen druckt es zweimal in Palestrinas Christe
+                       # von Dies sanctificatus (T. 27: Alt „lei-“, Tenor „ste“); vorläufig
+
+[TXT-REPEATED-PITCH]
+level = "V"            # Tonwiederholung nach einer Halben oder länger ohne neue Silbe, nach Vierteln
+                       # frei (Antizipation): Stoquerus N4, Jeppesen, Regel 9, Quadflieg IV
+
+[TXT-ENTRY]
+level = "V"            # Einsatz ohne Silbe: Zarlino 7 („di necessità“), Stoquerus N5
+
+[TXT-ORDER]
+level = "V"            # Text nicht in der Reihenfolge: Zarlino 8c, Vicentino 4, Zacconi 4, Stoquerus M4
+first = "V"            # jede Stimme singt den ganzen Text (Auslassungen erst in Phase 14)
+
+[TXT-REPEAT]
+short = "aus"          # Wiederholung in Kyrie, Sanctus, Agnus üblich: Lanfranco 7, Palestrina
+long = "P2"            # in Gloria und Credo selten (Stoquerus M4: „perraro“, Zarlino 8b), außer dem
+                       # letzten Abschnitt (Amen)
+again = "P1"           # jede weitere Wiederholung im selben Satz: Zarlino 8d („non stia troppo bene“)
+word = "P2"            # Wiederholung einzelner Wörter (San-ctus, San-ctus): Zarlino 8c („non dico gia
+                       # di vna sillaba, ne di vna parola“), Vicentino 4; ein ganzer Satz (A-men.) und
+                       # ein Schlussteil (/) zählen nicht; vorläufig
+
+[TXT-REST]
+word = "V"             # Pause im Wort: Jeppesen, Zarlino IV.32, Morley; bei Palestrina nie
+short = "V"            # Pause oder Stimmende direkt nach Vierteln oder Achteln: Jeppesen S. 269; in
+                       # einer Stichprobe von 4 850 Pausen Palestrinas keine
+clause = "P2"          # Pause nach einem Wort ohne Satzzeichen oder Zäsur: Zarlino IV.32 („fino a
+                       # tanto, che non sia finita ... alcuna sua parte“); bei Palestrina häufig, aber
+                       # teurer als an einem Satzzeichen, wie Zarlino abstuft; vorläufig
+last_word = "P3"       # dasselbe, wenn danach nur ein Wort bis zum Satzzeichen oder zur Zäsur bleibt,
+                       # das die Stimme dann allein singt (Laudámus | te., in nó-mi-ne | Dó-mi-ni.):
+                       # Zarlino IV.32 („alcuni poco intelligenti“), Morley; nach einer Pause beginnt
+                       # ein Sinnabschnitt (PAL-REST-2); in Jeppesens Unterlegung keine. Palestrinas
+                       # Stimmen brauchen sie gelegentlich: verboten ließen sich 43 der 632 Stimmen
+                       # aus Agnus I und Benedictus nicht mehr unterlegen; vorläufig
+comma = "P1"           # Pause nach einem Sinnabschnitt ohne Satzende (, ; :) oder an einer Zäsur:
+                       # Zarlino IV.32 erlaubt dort kurze Pausen, nach einem Satzende „quanta quantità
+                       # di pause“ (dort frei). So pausieren Stimmen mit Text 0,33-mal je 10
+                       # Stimmtakte, die Hälfte vor einer Wiederholung; frei an jedem Abschnittsende
+                       # doppelt so oft wie Palestrina; vorläufig
+long = "P1"            # Stille länger als eine Halbe, obwohl kein Satz endet: Zarlino IV.32, Morley;
+                       # Palestrina pausiert an Abschnittsenden oft länger; vorläufig
+
+[TXT-COMPLETE]
+level = "V"            # letzter Ton ohne die letzte Silbe: Zarlino 10, Stoquerus N5
+
+[TXT-MELISMA]
+unstressed = "P1"      # Melisma auf unbetonter Silbe (nicht am Anfang, nicht am Ende eines Abschnitts):
+                       # eine Tendenz bei Palestrina; das „e-“ von eleison ist Anfangssilbe
+function_word = "P2"   # Melisma auf einem Funktionswort (et, in, qui …): bei Palestrina gemieden
+last_syllable = "P2"   # Melisma auf der letzten Silbe eines Sinnabschnitts, außer einem Auftakt in
+                       # Vierteln im Takt vor dem letzten Ton: Stoquerus XXIX.4; die Unterstimmen
+                       # sind freier (Andrews, Quadflieg)
+long = "P1"            # je Ton über die Höchstzahl der Silbe hinaus: Jeppesen, Style S. 38
+max_short = 10         # betonte Silben in kurzen Texten (Kyrie, Sanctus, Agnus)
+max_long = 8           # betonte Silben in langen Texten (Gloria, Credo): in Jeppesens Credo von Dies
+                       # sanctificatus singt der Tenor 9 Töne auf „ter-“, der Sopran 6 (PAL-MEL-3,
+                       # in einer Messe gezählt); vorläufig
+max_weak = 4           # unbetonte Silben, die weder eröffnen noch einen Sinnabschnitt beenden: die Zahl
+                       # der Töne folgt dem Akzent (Zarlino 1589, Stoquerus XX.3, O1, PAL-MEL-1);
+                       # Jeppesens Unterlegung hat höchstens 4 („um“, „tus“); vorläufig
+max_opening = 5        # unbetonte eröffnende Silben (e- von eleison, Ho- von Hosanna): bei Jeppesen
+                       # höchstens 5; vorläufig
+max_last = 5           # letzte Silbe eines Sinnabschnitts, außer einem Auftakt: lieber wiederholen
+                       # als verweilen (Stoquerus XXV, PAL-MEL-2), die letzte Silbe auf den letzten
+                       # Ton (Zarlino, Regel 10); bei Jeppesen höchstens 5 (Bass „tem,“); vorläufig
+
+[TXT-ACCENT]
+short_penult = "V"     # Melisma auf der kurzen vorletzten Silbe (Dó-mi-nus): Barbarismus nach Zarlino
+                       # 9b und IV.32; Palestrina ist davon „bemerkenswert frei“ (Andrews)
+longer = "P3"          # unbetonte Silbe länger als die betonte daneben im selben Wort: Stoquerus M5,
+                       # Zacconi; „hin und wieder“ bei den alten Meistern (Quadflieg)
+opening = "P1"         # dasselbe für eine Anfangssilbe (langes „e-“ vor „lé“): bei Palestrina
+                       # gelegentlich (Dies sanctificatus, Christe)
+weak = "P1"            # betonte Silbe kürzer und nicht auf dem Taktanfang, die unbetonte darauf: eine
+                       # Tendenz bei Palestrina
+
+[TXT-LEAP]
+octave = "P2"          # Silbenwechsel im Wort über eine Septime, Oktave oder mehr: Vicentino 7 (nie
+                       # über eine Oktave), Quadflieg I
+sixth = "P1"           # über eine Sexte: zwischen der Oktave und der Quinte, die Vicentino 7
+                       # „weniger schlecht“ nennt; vorläufig
+fifth = "aus"          # über eine Quinte oder Quarte frei: die Basizans teilt e-lé-i-son an den
+fourth = "aus"         # meisten Kadenzen über eine Quinte
+
+[TXT-CADENCE]
+level = "P3"           # Binnenkadenz weder am Ende eines Sinnabschnitts noch vor einer Zäsur (| oder
+                       # /): Zarlino IV.32 (der Punkt), Lanfranco 1, Morley; vorläufig
+principal = "P2"       # nur Ende eines Sinnabschnitts mit Zwischenschluss oder Zäsur, auf der Finalis
+                       # oder der ersten Kadenzstufe: Zarlino („massimamente l'una delle principali“)
+comma = "P1"           # dasselbe auf einer anderen Stufe; eine Zäsur gilt wie ein Komma, denn der Plan
+                       # setzt dort Binnenkadenzen (Sanctus, Pleni, Benedictus); vorläufig
+
+# 18. Imitation (Phase 13): nach Zarlino (1558), Vicentino (1555), Pontio (1595), Fux (1725),
+# Morley und Jeppesen; die Zahlen aus den Eröffnungen von Palestrinas Messen (1156 Abschnitte, mit
+# den Korrekturen der Nachprüfung). Ohne Imitationsplan in der Partitur schweigen die Regeln; die
+# Korpora haben keinen. Der Erzeuger hält IMI-ENTRY sowie IMI-REST `level` und `offbeat` durch
+# Konstruktion ein, die übrigen Fälle bepreisen Plan und Soggetto. Die Parameter `unplanned_…`
+# (Phase 14) prüfen Sätze ohne Plan, etwa Teile einer Messe, die gemeinsam beginnen; sie sind hier
+# aus, damit die Kalibrierungen bleiben, und die Messe setzt sie auf die Stufen der Fälle mit Plan.
+
+[IMI-ENTRY]
+level = "V"            # ein Kopfton erklingt nicht wie geplant (andere Tonhöhe, Pause, Überbindung,
+                       # kein Anschlag zu seiner Zeit): der Plan ist die Imitation (Zarlino III.51)
+rhythm = "P1"          # ein Kopfton außer dem ersten kürzer als geplant: Palestrina variiert die Werte
+                       # der Töne 2–4 in 22 % der imitierenden Einsätze
+text = "P2"            # ein Anschlag des Kopfes mit einer anderen Silbe als beim ersten Einsatz: Jeppesen,
+                       # Regel 8 (S. 160), PAL-REP-3; nur in Stimmen mit Text; vorläufig
+
+[IMI-REST]
+level = "V"            # Wiedereinsatz ohne Pause oder nach weniger als einer Halben: 24 von 35 683
+                       # Wiedereinsätzen (0,07 %), weniger als die etwa 0,1 %, unter denen ein
+                       # Verbot nach der Leitlinie für Palestrina (§ 16) Verbot bleibt; Pontio
+                       # S. 63 („almeno d'vna pausa di Minima“); der Plan sieht die Pause vor
+offbeat = "V"          # Einsatz zwischen den halben Schlägen: 0 von 5 377 ersten Einsätzen
+minim_before = "P2"    # der Ton vor der Pause eine Halbe (oder kürzer): vor 4,1 % der Pausen, meist
+                       # Halbe auf dem zweiten Schlag; Vicentino IV.15 meidet sie; vorläufig
+
+[IMI-SILENCE]
+exposition = "P2"      # eine Stimme, die eingesetzt hat, schweigt auf einem Taktanfang, bevor die
+                       # letzte Stimme eingesetzt hat: in Palestrinas drei- bis sechsstimmigen
+                       # Abschnitten an 1,6–3,7 % dieser Taktanfänge (im Mittel etwa 2,4 %); Fux
+                       # S. 161 („nunquam pausam ponendam esse, nisi immediate subjectum sequatur“)
+long = "P3"            # eine Stimme schweigt länger als vier Breven (64 Ticks), je Taktanfang
+                       # darüber hinaus: Pausen von vier Breven und mehr sind 0–3,2 % der Pausen ab
+                       # einer Halben (vierstimmig 1,1 %), 0–2,5 % der Zeit der Stimmen; Vicentino
+                       # IV.29: die zuerst endende Stimme beginnt zuerst wieder
+thin = "P1"            # nach dem letzten ersten Einsatz klingt auf einem Taktanfang genau die
+                       # Hälfte der Stimmen (vier- und sechsstimmig; weniger bepreist FREE-TEXTURE):
+                       # vierstimmig an 10,7 %, sechsstimmig an 9,9 % dieser Taktanfänge
+unplanned_thin = "aus" # dasselbe ohne Imitationsplan, nach dem ersten Ton jeder Stimme: im Korpus
+                       # vierstimmig 11,4 %, sechsstimmig 10,1 %; die Messe: P1 (Phase 14)
+
+[IMI-HELD]
+struck = "V"           # auf dem Taktanfang gegen einen übergebundenen Ton angeschlagen, der nicht
+                       # stufenweise abwärts geht und kein Vorhalt nach FREE-RESOLUTION ist: 12 von
+                       # 40 381 dissonanten Anschlägen gegen einen übergebundenen Ton (0,03 %)
+passing = "P3"         # nach dem Taktanfang gegen einen übergebundenen Ton, der kein Vorhalt ist,
+                       # weder Durchgang noch Figur des freien Satzes: 63 von 14 650 (0,43 %)
+unplanned_struck = "aus"  # wie `struck` ohne Imitationsplan, im Korpus dieselben 12 Fälle; die
+                          # Messe: V (Phase 14)
+unplanned_passing = "aus" # wie `passing` ohne Imitationsplan, im Korpus dieselben 63 Fälle; die
+                          # Messe: P3 (Phase 14)
+
+[IMI-INTERVAL]
+third_sixth = "P2"     # in der Terz oder Sexte: etwa 5 % der zweiten Einsätze (meist Terzen und Dezimen
+                       # unter dem ersten, echte Sexten 0,8 %); Morley: „seldome vsed“
+second_seventh = "P3"  # in der Sekunde oder Septime: 0,1 % der imitierenden zweiten Einsätze
+
+[IMI-TIME]
+second = "P3"          # zweiter Einsatz mehr als 32 Ticks nach dem ersten: 2 von 737 Eröffnungen
+                       # (0,27 %, je 40 Ticks); Vicentino: vier Pausen „quasi troppo“, Pontio: nicht
+                       # mehr als zwei Breven
+apart = "P2"           # zweiter Einsatz erst nach dem Ende des Kopfes: 3,9 % (Morris S. 47: „almost
+                       # invariably in close order“)
+later = "P2"           # ein weiterer Einsatz mehr als 64 Ticks nach dem vorigen: 2,8 % (Median 24 Ticks)
+
+[IMI-ANSWER]
+modal = "P1"           # Quarte und Quinte in den Intervallen 1–2 getauscht: 12,6–20,7 % der Köpfe, wo es
+                       # möglich ist, 32 % zwischen Finalis und Quinte (Fux S. 144 verlangt es)
+adjusted = "P2"        # eine andere Änderung um eine Stufe in den Intervallen 1–3: etwa 2–5 % (eine obere
+                       # Grenze, die Zählung erkennt stärker veränderte Antworten nicht)
+
+[IMI-SUBJECT]
+short_first = "P2"     # erster Einsatz des ersten Punkts, erster Ton kürzer als eine Ganze: 3,6 %
+not_longest = "P1"     # dasselbe, erster Ton kürzer als einer der Töne 2–4: 11,6 %; frei nach unbetonter
+                       # erster Silbe (im Hosanna ist der zweite Ton in 18 % länger: 8 12 4)
+drop = "P2"            # ein Wert fällt auf ein Viertel des vorigen oder weniger: Breve zu Halbe oder
+                       # Viertel 1,4 %, Ganze zu Viertel 3,6 % der Übergänge; nach punktierten Werten
+                       # frei (punktierte Ganze zu Viertel häufig)
+range = "P1"           # Umfang eine Septime oder Oktave: 14 % der Köpfe
+beyond_octave = "V"    # Umfang über eine Oktave: nie
+plain = "P1"           # kein Sprung ab der Terz und kein Wertwechsel in den Intervallen 1–5: Jeppesen
+                       # S. 167–168 („too smooth“); vorläufig
+leaps = "P1"           # ein zweiter Sprung um eine Quarte oder mehr; vorläufig
+end = "P1"             # letzter Ton des Kopfes schwarz oder nicht auf dem Taktanfang: 12–21 %
+
+[IMI-DEGREE]
+fourth = "P1"          # späterer Punkt auf der Quarte: 12,2 %; im Phrygischen gilt A als Quinte, B wie
+                       # die Quarte
+level = "P2"           # auf einer anderen Stufe: je 3,7–8,9 %; den ersten Punkt beurteilt FREE-ENTRY
+
+[IMI-OVERLAP]
+late = "P1"            # erster Einsatz mehr als eine Ganze nach dem Ziel des Binnenschlusses davor: Fux
+                       # S. 247 („rariús post Clausulam“); neue Punkte beginnen 1,7-mal so oft wie
+                       # zufällig auf dem Ziel oder eine Ganze danach; vorläufig
+bare = "P3"            # keine andere Stimme klingt beim ersten Einsatz: Morley S. 158 („bare and
+                       # lame“); an 0,1 % der Taktanfänge klingt bei Palestrina keine Stimme
+
+# 12. Drei- bis sechsstimmiger Satz (fünf und sechs Stimmen hochgerechnet, vorläufig)
+
+[TEX-TRIAD]
+sixth = "P1"              # Korpus: dreistimmig 17 %, vierstimmig 17 %
+no_fifth = "P1"           # dreistimmig 33 %
+no_fifth_four = "P3"      # vierstimmig 1 %
+no_third = "P3"           # Quinte/Oktave dreistimmig nie (die früheren 2 % sind leere Sexten)
+no_third_four = "V"       # vierstimmig nie
+free_no_fifth = "P1"      # freier Satz; Palestrina: dreistimmig 38 %, ab vier Stimmen 16 %
+free_no_third = "P2"      # freier Satz; Palestrina: dreistimmig 7,4 %, ab vier Stimmen 3,2 %
+free_bare_sixth = "P2"    # freier Satz; Palestrina: dreistimmig 9,0 %, ab vier Stimmen 2,6 %
+
+[TEX-DOUBLING]
+third = "P1"              # Korpus: 25 von 82
+fifth = "P3"              # vierstimmig 2 von 82
+fifth_more = "P1"         # hochgerechnet
+
+[TEX-PARALLEL]
+level = "V"
+
+[TEX-DIRECT-PERFECT]
+outer = "P3"
+inner = "P2"
+outer_four = "P2"
+inner_four = "P1"
+outer_more = "P1"         # hochgerechnet
+inner_more = "aus"        # hochgerechnet
+final_chord = "P1"
+
+[TEX-SUCCESSIVE-PERFECT]
+level = "P1"              # vorläufig
+
+[TEX-SAME-DIRECTION]
+level = "P2"
+four_voices = "V"
+free = "P2"               # freier Satz; Palestrina: 1742 von 38 292 angeschlagenen Klängen (4,5 %)
+
+[TEX-SIXTHS-UP]
+level = "P3"
+
+[TEX-FIRST-CHORD]
+level = "V"
+
+[TEX-PENULT]
+level = "V"               # vorläufig
+four = "P2"               # Korpus: vierstimmig 1 von 32 (Durchgangsseptime, Fig. 185)
+bass = "V"                # Korpus: in allen 77 Beispielen 5. oder 2. Stufe oder verzögerter Leitton
+
+[TEX-CLAUSULA]
+level = "V"               # Korpus: in allen 77 Beispielen
+doubled = "V"             # Korpus: Leitton nie verdoppelt
+
+[TEX-FINAL-CHORD]
+level = "V"
+third = "aus"             # „vermeiden“: P2
+missing_third = "aus"     # „bevorzugt“: P2
+free_missing_third = "P2" # freier Satz; Palestrina: 110 von 1156 (dreistimmig 26 %, vierstimmig 19 %)
+free_degree = "P2"        # freier Satz, Palestrina: andere Stufen in 27 von 1147 Abschnitten

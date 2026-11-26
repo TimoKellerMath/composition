@@ -1,0 +1,8 @@
+Fuge über Kunst der Fuge, BWV 1080/1, d-Moll
+d 2/2, 4 Stimmen, 44 Takte, 690 Töne (202 vorgegeben), 7.7 s
+Antwort: a'2 d''2 c''2 a'2 gis'2 a'4 b'4 c''2~ c''8 d''8 c''8 b'8 a'4 (tonal)
+Takte: 1 Thema, 5 Antwort, 9 Codetta, 10 Thema, 14 Antwort, 18 Zwischenspiel, 21 Einsatz (F), 26 Zwischenspiel, 29 Einsatz (g), 34 Zwischenspiel, 37 Schlusseinsatz (d), 42 Kadenz
+Schluss: Orgelpunkt; 7 von 7 Einsätzen wiedergefunden
+0 Verbot(e), Kosten 859 aus 199 Präferenz(en).
+Kennzahlen in Bachs Bändern: 22 von 29 (Maßstab 18.0)
+Außerhalb: Notenwerte: Achtel; Melodik: Tritonussprung; Schläge mit Dissonanz; Akkordbezug: Wechselnote; Satz: Sechzehntel-Raster besetzt; Satz: gleichzeitige Anschläge; Stimmkreuzungen je 100 Schläge

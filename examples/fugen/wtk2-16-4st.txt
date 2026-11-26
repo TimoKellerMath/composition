@@ -1,0 +1,8 @@
+Fuge über WTK II/16, BWV 885, g-Moll
+g 3/4, 4 Stimmen, 49 Takte, 722 Töne (213 vorgegeben), 14.9 s
+Antwort: r4 g'4 r8 f'8 bes'4 g'4 r8 e'8 a'4 f'4 r8 d'8 g'8 g'8 g'8 g'8 g'8 g'8 g'8 (tonal)
+Takte: 1 Thema, 5 Antwort, 9 Codetta, 10 Thema, 14 Antwort, 18 Zwischenspiel, 22 Einsatz (Bb), 27 Zwischenspiel, 31 Einsatz (c), 36 Zwischenspiel, 40 Engführung (g), 47 Kadenz
+Schluss: Engführung im Abstand von 2 Takten; 8 von 8 Einsätzen wiedergefunden
+0 Verbot(e), Kosten 1014 aus 285 Präferenz(en).
+Kennzahlen in Bachs Bändern: 23 von 29 (Maßstab 18.0)
+Außerhalb: Notenwerte: Achtel; Melodik: Tonwiederholung; Melodik: Sekunde; Schläge mit Dissonanz; Satz: gleichzeitige Anschläge; Außenstimmen: gleiche Richtung

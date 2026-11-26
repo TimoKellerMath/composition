@@ -1,0 +1,56 @@
+---
+source: crates/fux-export/tests/export.rs
+expression: "document(Some(\"Sammlung\"), &[sheet], &options)"
+---
+\version "2.24.0"
+\language "nederlands"
+
+\header {
+  title = "Sammlung"
+  tagline = ##f
+}
+
+\paper {
+  #(set-paper-size "a4")
+}
+
+\layout {
+  \context {
+    \Lyrics
+    \override LyricHyphen.minimum-distance = #0.5
+    \override VerticalAxisGroup.nonstaff-unrelatedstaff-spacing.minimum-distance = #7
+  }
+}
+
+\score {
+  \header { piece = "Test \"Kyrie\" – dorisch – 5. Gattung" }
+  \new StaffGroup <<
+    \new Staff = "staff0" \with { instrumentName = "Sopran" shortInstrumentName = "S" }
+    \new Voice = "voice0" {
+      \key d \dorian \time 2/2 \clef "soprano"
+      r2 a'2~ | a'4 \once \override NoteHead.color = #red \once \override Stem.color = #red g'8^\markup \tiny "MEL-TEST" f'8 e'4 d'4 | \once \set suggestAccidentals = ##t cis''1 | d''1
+      \bar "|."
+    }
+    \new Staff = "staff1" \with { instrumentName = \markup \center-column { "Alt" \small "C. f." } shortInstrumentName = "A" }
+    \new Voice = "voice1" {
+      \key d \dorian \time 2/2 \clef "alto"
+      d'1 | f'1 | e'1 | d'1
+      \bar "|."
+    }
+    \new Lyrics = "text1" \lyricsto "voice1" { "Ky" "ri" "e" "son" }
+    \new Staff = "staff2" \with { instrumentName = "Bass" shortInstrumentName = "B" }
+    \new Voice = "voice2" {
+      \key d \dorian \time 2/2 \clef "bass"
+      d1 | d1 | a,1 | d1
+      \bar "|."
+    }
+    \new Lyrics \with { alignBelowContext = "staff2" } \lyricmode {
+      \override LyricText.font-size = #-1
+      \markup \center-column { "8" }2 \markup \center-column { "8" "5" }2 \markup \center-column { "5" "3" }4 \markup \center-column { "4" "3" }8 \markup \center-column { "3" }8 \markup \center-column { "3" "2" }4 \markup \center-column { "8" "3" }4 \markup \center-column { "5" "3" }1 \markup \center-column { "8" }1
+    }
+  >>
+  \layout { }
+}
+\markup \column {
+  \line { "Takt 2: Beispielbemerkung" }
+}

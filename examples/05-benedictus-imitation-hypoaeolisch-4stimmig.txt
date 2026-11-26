@@ -1,0 +1,14 @@
+hypoäolisch – freier Satz, 4 Stimmen, 31 Takte, seed 5
+Text: Benedictus (14 Silben, 1 Sinnabschnitt), Wiederholung auto
+Binnenschlüsse: Takt 22 auf C: …ve-nit
+Punkt 1 („Be-ne-dí-ctus qui ve-nit“): Sopran T. 1 A4 · Alt T. 5 E4 (Unterquarte) · Tenor T. 8 A3 (Unteroktave) · Bass T. 15 E3 (Unterundezime); Kopf 6 Töne, real; Binnenschluss T. 22 auf C
+Punkt 2 („in nó-mi-ne Dó-mi-ni.“): Bass T. 23½ D3 · Alt T. 24½ A3 (Quinte); Kopf 4–7 Töne, real; Schluss T. 31 auf A
+ 1. Kosten 31
+      Sopran: A4 | G4 | F4 | A4 B4 | C5 | D5 | E5 D5 | C5 D5~ | D5 D5 C5~ | C5 D5 | C5 B4 | G4 A4 C5 B4 | A4 A4 | C5 D5 | E5 E5~ | E5 D5 B4~ | B4 A4 G4~ | G4 A4 | G4 | A4 C5~ | C5 B4 | C5~ | C5 D5~ | D5 C5 | r G4 | E4 D4 | E4 F4 | G4 G4 | B4 A4~ | A4 G#4 | A4
+        Text: Be-ne-dí-ctus qui ve-nit Be-ne-dí-ctus qui ve-nit in nó-mi-ne Dó-mi-ni.
+      Alt: r | r | r | r | E4 | D4 | C4 | E4 F4 | G4 | A4 F4 | E4 G4~ | G4 F4 G4 | F4 | G4 A4 | A4 G4~ | G4 F4 D4 | E4 F4 G4~ | G4 G4 F4 | E4 E4 | F4 A4~ | A4 G4~ | G4 F4 G4~ | G4 A4 | r A3 | G3 G3 | B3 C4 | B3 | D4 C4 | D4 F4~ | F4 E4 | C#4
+        Text: Be-ne-dí-ctus qui ve-nit Be-ne-dí-ctus qui ve-nit in nó-mi-ne Dó-mi-ni.
+      Tenor: r | r | r | r | r | r | r | A3 | G3 | F3 | A3 B3 | C4 | D4 F4~ | F4 E4 D4 | C4 E4 | F4 D4~ | D4 C4 E4~ | E4 E4 C4~ | C4 B3 | C4 C4 | D4 | C4 | C4 A3~ | A3 G3 E3~ | E3 E3 | G3 F3 | G3 | B3 | B3 D4 | B3 | A3
+        Text: Be-ne-dí-ctus qui ve-nit Be-ne-dí-ctus qui ve-nit in nó-mi-ne Dó-mi-ni.
+      Bass: r | r | r | r | r | r | r | r | r | r | r | r | r | r | E3 | D3 | C3 | E3 F3 | G3 | F3 A3 | G3 | C3 | r D3 | C3 C3 | E3 E3~ | E3 D3 E3~ | E3 E3 G3~ | G3~ | G3 F3 D3 | E3 | A3
+        Text: Be-ne-dí-ctus qui ve-nit in nó-mi-ne Dó-mi-ni.

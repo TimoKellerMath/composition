@@ -1,0 +1,35 @@
+[package]
+name = "fux-cli"
+description = "Command-line interface for generating and checking species counterpoint after Fux"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[lib]
+name = "fux_cli"
+path = "src/lib.rs"
+
+[[bin]]
+name = "fux"
+path = "src/main.rs"
+
+[features]
+default = ["parallel"]
+# The search on all cores (not for WebAssembly).
+parallel = ["fux-core/parallel"]
+
+[dependencies]
+anyhow.workspace = true
+clap.workspace = true
+fux-core.workspace = true
+fux-export.workspace = true
+serde.workspace = true
+toml.workspace = true
+
+[dev-dependencies]
+midly.workspace = true
+
+[lints]
+workspace = true

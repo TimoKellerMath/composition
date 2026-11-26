@@ -1,0 +1,8 @@
+Fuge über WTK II/5, BWV 874, D-Dur
+D 2/2, 3 Stimmen, 38 Takte, 654 Töne (250 vorgegeben), 4.1 s
+Antwort: r8 a'8 a'8 a'8 d'4 fis'4. b8 e'8 d'8 cis'4 (real)
+Takte: 1 Thema, 2 Antwort, 4 Codetta, 5 Thema, 7 Zwischenspiel, 9 Einsatz (b), 10 Einsatz (f#), 13 Zwischenspiel, 15 Einsatz (G), 16 Einsatz (e), 19 Zwischenspiel, 21 Einsatz (A), 22 Einsatz (b), 25 Zwischenspiel, 27 Einsatz (f#), 28 Einsatz (G), 31 Zwischenspiel, 33 Engführung (D), 36 Kadenz
+Schluss: Engführung im Abstand von 1 Takten; 13 von 13 Einsätzen wiedergefunden
+0 Verbot(e), Kosten 848 aus 225 Präferenz(en).
+Kennzahlen in Bachs Bändern: 17 von 29 (Maßstab 18.0)
+Außerhalb: Notenwerte: Achtel; Melodik: Tonwiederholung; Melodik: Sekunde; Melodik: Quarte und Quinte; Melodik: Richtungswechsel; Schläge mit angeschlagener Dissonanz; Schläge mit Dissonanz; Akkordbezug: Vorhalt; Satz: Pausenanteil; Satz: gleichzeitige Anschläge; Außenstimmen: Seitenbewegung; Außenstimmen: gleiche Richtung

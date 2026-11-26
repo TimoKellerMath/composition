@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <!-- Everything comes from this server. Verovio needs 'wasm-unsafe-eval' and the inline styles
+      of its SVG; the hash admits the inline script at the end (tools/build_web_fuge.sh checks
+      it). -->
+    <meta http-equiv="Content-Security-Policy"
+      content="default-src 'none'; script-src 'self' 'wasm-unsafe-eval' 'sha256-Ru4lNVbaEMsetmrsaC/oxK41EE7Tdr1tVcG9jfOQMO0='; connect-src 'self'; worker-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; base-uri 'none'; form-action 'none'">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>fux-fuge</title>
+    <meta name="description"
+      content="Fugen im Stil Bachs zu einem gegebenen Thema, für zwei bis vier Stimmen: Antwort, Kontrasubjekt, Exposition, Zwischenspiele, Einsätze in anderen Tonarten, Engführung oder Orgelpunkt, im Browser gesetzt.">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+      <h1>fux-fuge</h1>
+      <span class="tagline" data-t="tagline">Fugen im Stil Bachs zu einem gegebenen Thema</span>
+      <div class="settings">
+        <select id="lang" aria-label="Sprache / Language">
+          <option value="de">Deutsch</option>
+          <option value="en">English</option>
+        </select>
+      </div>
+    </header>
+
+    <aside id="task" aria-label="Thema und Suche" data-label="task">
+      <!-- No validation by the browser: app.js reads the fields, and a field that a subject of
+        the module fills is not sent. -->
+      <form id="form" class="task" novalidate>
+        <!-- The fields of the request, which app.js builds from its list FIELDS. -->
+        <div id="fields"></div>
+        <div class="seed">
+          <label><input id="new-seed" type="checkbox" checked> <span data-t="new_seed">neuer Seed</span></label>
+          <label>Seed <input id="seed" type="number" min="0" step="1" value="1"></label>
+        </div>
+        <!-- Disabled until the module has loaded. -->
+        <button type="submit" class="primary" data-t="run" disabled>Fuge setzen</button>
+        <!-- Several versions of the fugue that differ in the aspects ticked here; app.js builds
+          a checkbox per field of FIELDS that can be varied. -->
+        <fieldset id="versions-form">
+          <legend data-t="versions">Fassungen</legend>
+          <p class="hint" data-t="versions_hint">Mehrere Fassungen derselben Fuge, die sich nur
+          in den angekreuzten Aspekten unterscheiden.</p>
+          <div id="axes"></div>
+          <label class="row"><span class="name" data-t="more_seeds">weitere Seeds</span>
+          <input id="more-seeds" type="number" min="0" max="3" step="1" value="0"></label>
+          <label><input id="blind" type="checkbox"> <span data-t="blind">blind: worin sie sich
+          unterscheiden, erst nach dem Hören zeigen</span></label>
+          <button type="button" id="run-versions" data-t="run_versions" disabled>Fassungen
+          setzen</button>
+        </fieldset>
+        <button type="button" id="cancel" data-t="cancel" hidden>Abbrechen</button>
+        <!-- The time of a fugue being set runs beside the status, which is read out only when
+          it changes. -->
+        <p class="status"><span id="status" role="status">Lade das Programm …</span>
+        <span id="elapsed" aria-hidden="true"></span></p>
+        <noscript><p>Die Seite rechnet im Browser und braucht dafür JavaScript und WebAssembly.
+        This page computes in the browser, for which it needs JavaScript and
+        WebAssembly.</p></noscript>
+      </form>
+      <details id="help" open>
+        <summary data-t="help">Schreibweise der Töne</summary>
+        <div data-t="help_text">
+          <p>Die Töne stehen wie in LilyPond, mit Leerzeichen dazwischen: niederländische
+          Tonnamen (<code>c d e f g a b</code>, erhöht mit <code>is</code>, erniedrigt mit
+          <code>es</code>: <code>fis</code>, <code>bes</code>, <code>es</code>, <code>as</code>;
+          <code>b</code> ist das deutsche h), dahinter die Oktave (<code>c</code> kleines c,
+          <code>c'</code> eingestrichenes, <code>c''</code> zweigestrichenes, <code>c,</code>
+          großes C) und der Notenwert (<code>1</code> Ganze, <code>2</code> Halbe, <code>4</code>
+          Viertel, <code>8</code>, <code>16</code>, <code>32</code>; ein Punkt verlängert:
+          <code>4.</code>). Ein Notenwert gilt, bis ein anderer kommt.</p>
+          <p><code>r</code> ist eine Pause, <code>~</code> hinter einem Ton bindet ihn an den
+          nächsten gleichen, <code>|</code> darf zwischen zwei Tönen als Taktstrich stehen und
+          wird überlesen. Das Thema beginnt an einem Taktstrich: Pausen am Anfang setzen einen
+          Auftakt.</p>
+          <p>Tonart: ein Buchstabe mit <code>#</code> oder <code>b</code>, groß für Dur, klein für
+          Moll (<code>C</code>, <code>f#</code>, <code>Bb</code>). Der Einsatzabstand zählt die
+          Takte von einem Einsatz der Exposition zum nächsten.</p>
+          <p>Beispiel (Kunst der Fuge, Tonart <code>d</code>, Takt <code>2/2</code>):<br>
+          <code>d'2 a' | f' d' | cis' d'4 e' | f'2~ f'8 g' f' e' | d'4</code></p>
+        </div>
+      </details>
+    </aside>
+
+    <main>
+      <!-- The versions set together: what they differ in, a button per version, and what to
+        do with the one shown. -->
+      <nav id="versions" aria-label="Fassungen" data-label="versions" hidden>
+        <p id="versions-differ"></p>
+        <div id="version-tabs"></div>
+        <div class="choice">
+          <button type="button" id="reveal" data-t="reveal" hidden>Auflösen</button>
+          <button type="button" id="keep" data-t="keep">Diese Fassung übernehmen</button>
+        </div>
+      </nav>
+      <h2 id="title" data-t="fugue">Fuge</h2>
+      <p id="summary"></p>
+      <div class="toolbar">
+        <button type="button" id="play" data-t="play" disabled>Abspielen</button>
+        <button type="button" id="stop" data-t="stop" disabled>Stopp</button>
+        <label><span data-t="tempo">Tempo (Viertel je Minute)</span>
+        <input id="tempo" type="number" min="20" max="300" value="72"></label>
+        <span class="spacer"></span>
+        <!-- A button per file of the fugue, which app.js builds from its list FILES. -->
+        <span id="downloads"></span>
+      </div>
+      <div id="notation" class="paper"></div>
+    </main>
+
+    <aside id="report" aria-label="Bericht" data-label="report">
+      <p id="report-empty" class="help" data-t="report_empty">Nach dem Setzen stehen hier die
+      Antwort, die Abschnitte, die Prüfung und die Kennzahlen der Fuge.</p>
+      <div id="report-body" hidden>
+        <h2 data-t="answer">Antwort</h2>
+        <p id="answer"></p>
+        <p id="countersubject"></p>
+        <h2 data-t="sections">Abschnitte</h2>
+        <p id="ending"></p>
+        <p id="entries"></p>
+        <ul id="sections" role="list"></ul>
+        <!-- What the checker says of the fugue, in the module's words. -->
+        <div id="check-box">
+          <h2 data-t="check">Prüfung</h2>
+          <p id="check"></p>
+          <div id="counts"></div>
+          <p class="help" data-t="check_help">Geprüft ist die fertige Fuge gegen ihr eigenes Gerüst
+          aus Akkorden. Wiedergefunden ist ein Einsatz, den ein Themenfinder aus den Noten allein
+          erkennt.</p>
+        </div>
+        <h2 data-t="measures">Kennzahlen</h2>
+        <p id="hits"></p>
+        <table id="measures">
+          <thead>
+            <tr>
+              <th scope="col" data-t="measure">Kennzahl</th>
+              <th scope="col" class="number" data-t="value">Wert</th>
+              <th scope="col" class="number" data-t="band">Bachs Band</th>
+              <td></td>
+            </tr>
+          </thead>
+          <tbody id="measure-rows"></tbody>
+        </table>
+        <p class="help" data-t="measures_help">Das Band einer Kennzahl reicht vom 10. bis zum
+        90. Perzentil der 48 Fugen des Wohltemperierten Klaviers. Der Maßstab ist das 10. Perzentil
+        ihrer Trefferzahlen, jede Fuge gegen die Bänder der übrigen gezählt.</p>
+      </div>
+    </aside>
+
+    <footer>
+      <span class="credits"
+        data-t="credits">Die Fugen setzt das Programm, nicht Bach: mit Regeln und Tabellen,
+      gezählt an den 48 Fugen des Wohltemperierten Klaviers. Notensatz: <a href="https://www.verovio.org">Verovio</a> (<a href="verovio/README.txt">LGPL</a>).
+      Die Pläne aus WTK I enthalten Informationen aus <a href="https://gitlab.com/algomus.fr/algomus-data">algomus-data</a> (<a href="https://opendatacommons.org/licenses/odbl/1-0/">ODbL 1.0</a>).</span>
+      <!-- The site's own pages, as in its footer; the page names stay German there too. The role
+        keeps the list a list for screen readers that drop it without bullets. -->
+      <ul class="legal" role="list">
+        <li><a href="https://timo-keller.de/">timo-keller.de</a></li>
+        <li><a href="https://timo-keller.de/contact.html" data-t="contact">Kontakt</a></li>
+        <li><a href="https://timo-keller.de/contact.html#impressum" lang="de">Impressum</a></li>
+        <li><a href="https://timo-keller.de/datenschutzerklaerung.html" lang="de">Datenschutzerklärung</a></li>
+      </ul>
+    </footer>
+
+    <script src="verovio/verovio-toolkit-wasm.js"></script>
+    <script>
+    // The notation toolkit, once its WebAssembly runs; null if verovio/ did not load.
+    window.verovioReady = new Promise((resolve) => {
+      if (!window.verovio) {
+        resolve(null);
+        return;
+      }
+      verovio.module.onRuntimeInitialized = () => resolve(new verovio.toolkit());
+    });
+    </script>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+dorisch – freier Satz, 3 Stimmen, 14 Takte, seed 6
+Text: Eigener Text (10 Silben, 1 Sinnabschnitt), Wiederholung auto
+Punkt 1 („Ad te le-vá-vi á-ni-mam me-am.“): Tenor T. 1 D3 · Bass T. 3 A2 (Unterquarte) · Alt T. 6 D4 (Oktave); Kopf 5–7 Töne, real; Schluss T. 14 auf D
+ 1. Kosten 7
+      Alt: r | r | r | r | r | D4 | F4 E4~ | E4 A4 | G4 E4 | F4 | E4 D4 | C4 D4~ | D4 C#4 | D4
+        Text: Ad te le-vá-vi á-ni-mam me-am.
+      Tenor: D3 | F3 E3~ | E3 A3 | G3 B3~ | B3 C4 B3~ | B3 B3 D4~ | D4 C4 A3 | G3 F3 E3 F#3 | G3 B3 | A3 B3~ | B3 | A3 G3 | F3 E3 F#3~ | F#3
+        Text: Ad te le-vá-vi á-ni-mam me-am.
+      Bass: r | r | A2 | C3 B2~ | B2 E3 | D3 B2 | A2 Bb2 C3~ | C3 B2 C3~ | C3 D3 E3~ | E3 D3 | E3 | F3 C3 B2 G2 | A2 | D3
+        Text: Ad te le-vá-vi á-ni-mam me-am.

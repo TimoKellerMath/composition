@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <!-- Everything comes from this server. Verovio needs 'wasm-unsafe-eval' and the inline styles
+      of its SVG; the hash admits the inline script at the end (tools/build_web.sh checks it). -->
+    <meta http-equiv="Content-Security-Policy"
+      content="default-src 'none'; script-src 'self' 'wasm-unsafe-eval' 'sha256-Ru4lNVbaEMsetmrsaC/oxK41EE7Tdr1tVcG9jfOQMO0='; connect-src 'self'; worker-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; base-uri 'none'; form-action 'none'">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>fux-kontrapunkt</title>
+    <meta name="description"
+      content="Kontrapunkt im Palestrinastil nach Fux: Cantus firmi und Gegenstimmen in allen Gattungen, freie Sätze und ganze Messen auf lateinischen Text, im Browser.">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+      <h1>fux-kontrapunkt</h1>
+      <nav id="tabs" aria-label="Aufgaben">
+        <button type="button" data-tab="cp" class="active" data-t="tab_cp">Kontrapunkt</button>
+        <button type="button" data-tab="free" data-t="tab_free">Freier Satz</button>
+        <button type="button" data-tab="mass" data-t="tab_mass">Messe</button>
+        <button type="button" data-tab="cf">Cantus firmus</button>
+        <button type="button" data-tab="check" data-t="tab_check">Prüfen</button>
+        <button type="button" data-tab="example" data-t="tab_example">Fux' Beispiele</button>
+      </nav>
+      <div class="settings">
+        <label><span data-t="profile">Regeln</span>
+        <select id="profile">
+          <option value="fux">Fux</option>
+          <option value="jeppesen">Jeppesen</option>
+        </select>
+      </label>
+        <select id="lang" aria-label="Sprache / Language">
+          <option value="de">Deutsch</option>
+          <option value="en">English</option>
+        </select>
+      </div>
+    </header>
+
+    <aside id="task">
+      <form id="form-cp" class="task" data-tab="cp">
+        <fieldset>
+          <legend data-t="cantus">Cantus firmus</legend>
+          <label><input type="radio" name="source" value="fux" checked> <span data-t="source_fux">von Fux</span></label>
+          <select id="cp-fux" aria-label="Cantus von Fux"></select>
+          <label><input type="radio" name="source" value="notes"> <span data-t="source_notes">eigene Noten</span></label>
+          <textarea id="cp-notes" rows="2" placeholder="D4 F4 E4 D4 G4 F4 A4 G4 F4 E4 D4"
+            aria-label="Noten"></textarea>
+          <label><input type="radio" name="source" value="generate"> <span data-t="source_generate">erzeugen</span></label>
+          <label class="row"><span data-t="length">Länge</span>
+          <input id="cp-length" type="number" min="6" max="20" value="11"></label>
+          <label class="row"><span data-t="mode">Modus</span>
+          <select id="cp-mode"><option value="" data-t="from_cantus">aus dem Cantus</option></select></label>
+          <label class="row"><span data-t="cf_voice">Stimmlage</span>
+          <select id="cp-cf-voice"><option value="" data-t="auto">automatisch</option></select></label>
+        </fieldset>
+        <fieldset>
+          <legend data-t="counterpoint">Gegenstimmen</legend>
+          <label class="row"><span data-t="species">Gattung</span>
+          <select id="cp-species">
+            <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+            <option value="0" data-t="species_free">frei</option>
+          </select></label>
+          <label class="row"><span data-t="voices">Stimmen</span>
+          <select id="cp-voices">
+            <option>2</option><option>3</option><option>4</option><option>5</option><option>6</option>
+          </select></label>
+          <label><input id="cp-below" type="checkbox"> <span data-t="below">zweistimmig: Gegenstimme unten</span></label>
+          <label class="row"><span data-t="solutions">Lösungen</span>
+          <input id="cp-count" type="number" min="1" max="10" value="3"></label>
+        </fieldset>
+        <div class="seed">
+          <label><input id="cp-new-seed" type="checkbox" checked> <span data-t="new_seed">neuer Seed</span></label>
+          <label>Seed <input id="cp-seed" type="number" min="0" value="1"></label>
+        </div>
+        <button type="submit" class="primary" data-t="run_cp">Setzen</button>
+      </form>
+
+      <form id="form-free" class="task" data-tab="free" hidden>
+        <p class="help" data-t="free_help">Alle Stimmen frei im Stil Palestrinas, ohne Cantus
+        firmus; die Schlüsse als Klauseln.</p>
+        <label class="row"><span data-t="mode">Modus</span><select id="free-mode"></select></label>
+        <label class="row"><span data-t="voices">Stimmen</span>
+        <select id="free-voices">
+          <option>2</option><option>3</option><option selected>4</option><option>5</option><option>6</option>
+        </select></label>
+        <fieldset>
+          <legend data-t="text">Text</legend>
+          <select id="free-text" aria-label="Text"></select>
+          <label id="free-own-box" hidden><span class="hint" data-t="own_help">Lateinisch</span>
+          <textarea id="free-own" rows="3" lang="la" spellcheck="false"
+            placeholder="Ad te le-vá-vi á-ni-mam me-am."></textarea></label>
+          <div id="free-units-box" class="row" hidden>
+            <span data-t="units">Sinnabschnitte</span>
+            <span class="inline"><input id="free-from" type="number" min="1" value="1"
+              aria-label="von"> – <input id="free-to" type="number" min="1" value="1"
+              aria-label="bis"></span>
+          </div>
+          <label class="row"><span data-t="repeat">Wiederholung</span>
+          <select id="free-repeat">
+            <option value="auto" data-t="repeat_auto">automatisch</option>
+            <option value="keine" data-t="repeat_none">keine</option>
+            <option value="frei" data-t="repeat_free">frei</option>
+          </select></label>
+          <label><input id="free-accents" type="checkbox" checked> <span data-t="accents">Akzente zeigen</span></label>
+          <label><input id="free-eleison" type="checkbox"> <span data-t="eleison3">e-léi-son (3 Silben)</span></label>
+          <div id="free-preview" class="preview"></div>
+        </fieldset>
+        <div class="row">
+          <label for="free-length" data-t="measures">Takte</label>
+          <span class="inline">
+            <input id="free-length" type="number" min="4" max="200" value="16">
+            <label><input id="free-length-auto" type="checkbox" checked> <span data-t="auto">automatisch</span></label>
+          </span>
+        </div>
+        <label class="row"><span data-t="cadences">Binnenschlüsse</span>
+        <input id="free-cadences" type="text" value="auto" placeholder="auto, none, 7, 12:F"></label>
+        <fieldset id="free-imitation">
+          <legend>Imitation</legend>
+          <label class="row"><span>Imitation</span>
+          <select id="free-imitation-mode">
+            <option value="auto" data-t="imitation_auto">automatisch</option>
+            <option value="an" data-t="on">an</option>
+            <option value="aus" data-t="off">aus</option>
+          </select></label>
+          <p id="free-imitates" class="hint"></p>
+          <div id="free-imitation-box">
+            <label class="row"><span>Soggetto</span>
+            <select id="free-subject">
+              <option value="text" data-t="subject_text">aus dem Text</option>
+              <option value="kyriale" data-t="subject_kyriale">Choral des Kyriale</option>
+              <option value="gabc" data-t="subject_gabc">Choral als GABC</option>
+              <option value="notes" data-t="subject_notes">eigene Noten</option>
+            </select></label>
+            <label id="free-gabc-box" hidden><span class="hint" data-t="gabc_help">GABC-Text des
+            Chorals, etwa von gregobase.selapa.net</span>
+            <textarea id="free-gabc" rows="4" spellcheck="false"
+              placeholder="name:Kyrie IX;&#10;mode:1;&#10;%%&#10;(c4) KY(dh/hhh)ri(hg)e(hhh) *(,) …"></textarea></label>
+            <label id="free-notes-box" hidden><span class="hint" data-t="notes_help">Köpfe in
+            LilyPond, | zwischen den Punkten</span>
+            <textarea id="free-notes" rows="2" spellcheck="false"
+              placeholder="d'1 d'2 a'2 g'4 f'4 e'2 d'1"></textarea></label>
+            <div id="free-chant-box" hidden>
+              <label class="row"><span data-t="phrases">Phrasen</span>
+              <input id="free-phrases" type="text" placeholder="2, 3"></label>
+              <label><input id="free-chant-mode" type="checkbox" checked> <span
+                data-t="chant_mode">im Modus des Chorals</span></label>
+            </div>
+            <details id="free-entries">
+              <summary data-t="entries">Punkte und Einsätze</summary>
+              <label class="row"><span data-t="points">Punkte (0: auto)</span>
+              <input id="free-points" type="number" min="0" max="6" value="0"></label>
+              <label class="row"><span data-t="later_voices">Stimmen späterer Punkte</span>
+              <select id="free-later-voices">
+                <option value="auto">auto</option>
+                <option value="alle" data-t="all">alle</option>
+                <option>2</option><option>3</option><option>4</option><option>5</option>
+              </select></label>
+              <label class="row"><span data-t="order">Reihenfolge</span>
+              <input id="free-order" type="text" placeholder="A S T B; T B"></label>
+              <label class="row"><span data-t="intervals">Intervalle</span>
+              <input id="free-intervals" type="text" placeholder="d 0 d; 0"></label>
+              <label class="row"><span data-t="delays">Abstände (Takte)</span>
+              <input id="free-delays" type="text" placeholder="1 2 1.5; 1"></label>
+              <label class="row"><span data-t="pairs">Paare</span>
+              <select id="free-pairs">
+                <option value="auto">auto</option>
+                <option value="an" data-t="on">an</option>
+                <option value="aus" data-t="off">aus</option>
+              </select></label>
+              <label class="row"><span data-t="restate">Punkt 1 wiederholen</span>
+              <select id="free-restate">
+                <option value="auto">auto</option>
+                <option value="an" data-t="on">an</option>
+                <option value="aus" data-t="off">aus</option>
+              </select></label>
+              <label class="row"><span data-t="answer">Antwort</span>
+              <select id="free-answer">
+                <option value="auto">auto</option>
+                <option value="real">real</option>
+                <option value="modal">modal</option>
+              </select></label>
+              <label class="row"><span data-t="head">Kopf, Töne (0: auto)</span>
+              <input id="free-head" type="number" min="0" max="12" value="0"></label>
+              <p class="help" data-t="entries_help">Reihenfolge: die Stimmen jedes Punktes, der
+              Führer zuerst, ; trennt die Punkte. Intervalle zum Führer: 0 gleiche Stufe, d
+              andere Hauptstufe, +n/-n Stufen.</p>
+            </details>
+            <button type="button" id="free-plan" data-t="show_plan">Plan zeigen</button>
+          </div>
+        </fieldset>
+        <label class="row"><span data-t="solutions">Lösungen</span>
+        <input id="free-count" type="number" min="1" max="10" value="3"></label>
+        <div class="seed">
+          <label><input id="free-new-seed" type="checkbox" checked> <span data-t="new_seed">neuer Seed</span></label>
+          <label>Seed <input id="free-seed" type="number" min="0" value="1"></label>
+        </div>
+        <p id="free-long" class="warning" hidden></p>
+        <button type="submit" class="primary" data-t="run_cp">Setzen</button>
+      </form>
+
+      <form id="form-mass" class="task" data-tab="mass" hidden>
+        <p class="help" data-t="mass_help">Eine ganze Messe in den Formen von Palestrinas Messen:
+        Kyrie, Gloria, Credo, Sanctus, Benedictus und Agnus Dei. Ein Plan teilt sie vor der Suche in
+        Teile; mehrere Worker setzen sie zugleich, die längsten zuerst, dann Satz für Satz.</p>
+        <label class="row"><span data-t="mass_preset">Form</span>
+        <select id="mass-preset">
+          <option value="brevis" data-t="preset_brevis">Missa brevis</option>
+          <option value="normal" data-t="preset_normal">normal</option>
+        </select></label>
+        <label class="row"><span data-t="mode">Modus</span>
+        <select id="mass-mode"><option value="" data-t="mass_mode_default">dorisch (Standard)</option></select></label>
+        <label class="row"><span data-t="voices">Stimmen</span>
+        <select id="mass-voices">
+          <option>2</option><option>3</option><option selected>4</option><option>5</option><option>6</option>
+        </select></label>
+        <label class="row"><span data-t="mass_choir">Besetzung</span>
+        <input id="mass-parts" type="text" placeholder="S A T B"></label>
+        <fieldset id="mass-movements">
+          <legend data-t="movements">Sätze</legend>
+          <label><input id="mass-kyrie" type="checkbox" checked> Kyrie</label>
+          <label><input id="mass-gloria" type="checkbox" checked> Gloria</label>
+          <label><input id="mass-credo" type="checkbox" checked> Credo</label>
+          <label><input id="mass-sanctus" type="checkbox" checked> Sanctus</label>
+          <label><input id="mass-benedictus" type="checkbox" checked> Benedictus</label>
+          <label><input id="mass-agnus" type="checkbox" checked> Agnus Dei</label>
+        </fieldset>
+        <fieldset>
+          <legend data-t="chant_and_motif">Choral und Kopfmotiv</legend>
+          <label class="row"><span data-t="chant">Choral</span>
+          <select id="mass-chant">
+            <option value="keiner" data-t="chant_none">keiner</option>
+            <option value="ix" data-t="chant_ix">Messe IX (Cum jubilo)</option>
+            <option value="iv" data-t="chant_iv">Kyrie IV, sonst Messe IX</option>
+          </select></label>
+          <label><input id="mass-motif" type="checkbox"> <span data-t="motif">Kopfmotiv des Kyrie I
+          in Gloria, Credo, Sanctus und Agnus Dei I</span></label>
+        </fieldset>
+        <details id="mass-sections-box">
+          <summary data-t="sections">Abschnitte</summary>
+          <div id="mass-sections" class="sections"></div>
+          <input id="mass-section-choices" type="hidden" value="{}">
+          <p class="help" data-t="sections_help">Stimmen, Neubeginn und Schlussstufe je Abschnitt
+          und je Halteklang; „auto“ wie geplant. Ein Abschnitt nennt bei der Schlussstufe seinen
+          letzten Teil.</p>
+        </details>
+        <div class="row">
+          <label for="mass-chunk" data-t="chunk">Größe der Teile (Silben)</label>
+          <span class="inline">
+            <input id="mass-chunk" type="number" min="20" max="200" value="45">
+            <label><input id="mass-chunk-off" type="checkbox"> <span data-t="chunk_off">ungeteilt</span></label>
+          </span>
+        </div>
+        <label class="row"><span data-t="lengths">Längen</span>
+        <select id="mass-lengths">
+          <option value="palestrina" data-t="lengths_palestrina">wie bei Palestrina</option>
+          <option value="natürlich" data-t="lengths_natural">natürlich</option>
+        </select></label>
+        <fieldset>
+          <legend data-t="text">Text</legend>
+          <label class="row"><span data-t="repeat">Wiederholung</span>
+          <select id="mass-repeat">
+            <option value="auto" data-t="repeat_auto">automatisch</option>
+            <option value="keine" data-t="repeat_none">keine</option>
+            <option value="frei" data-t="repeat_free">frei</option>
+          </select></label>
+          <label><input id="mass-accents" type="checkbox" checked> <span data-t="accents">Akzente zeigen</span></label>
+          <label><input id="mass-eleison" type="checkbox"> <span data-t="eleison3">e-léi-son (3 Silben)</span></label>
+        </fieldset>
+        <fieldset>
+          <legend data-t="notation">Notenbild</legend>
+          <label><input id="mass-mensurstriche" type="checkbox"> <span data-t="mensurstriche">Mensurstriche</span></label>
+          <label><input id="mass-intonation" type="checkbox" checked> <span data-t="intonation">Intonation vor Gloria und Credo</span></label>
+          <label><input id="mass-tacet" type="checkbox"> <span data-t="tacet">pausierende Stimmen in den
+          Dateien verbergen</span></label>
+          <label class="row"><span data-t="title">Titel</span>
+          <input id="mass-title" type="text" placeholder="Missa brevis"></label>
+        </fieldset>
+        <div class="seed">
+          <label><input id="mass-new-seed" type="checkbox" checked> <span data-t="new_seed">neuer Seed</span></label>
+          <label>Seed <input id="mass-seed" type="number" min="0" value="1"></label>
+        </div>
+        <div id="mass-preview" class="preview"></div>
+        <button type="submit" class="primary" data-t="run_mass">Messe setzen</button>
+        <button type="button" id="mass-plan" data-t="show_plan">Plan zeigen</button>
+      </form>
+
+      <form id="form-cf" class="task" data-tab="cf" hidden>
+        <label class="row"><span data-t="mode">Modus</span><select id="cf-mode"></select></label>
+        <label class="row"><span data-t="length">Länge</span>
+        <input id="cf-length" type="number" min="6" max="20" value="11"></label>
+        <label
+          class="row"><span data-t="cf_voice">Stimmlage</span><select id="cf-voice"></select></label>
+        <label class="row"><span data-t="count">Anzahl</span>
+        <input id="cf-count" type="number" min="1" max="20" value="5"></label>
+        <div class="seed">
+          <label><input id="cf-new-seed" type="checkbox" checked> <span data-t="new_seed">neuer Seed</span></label>
+          <label>Seed <input id="cf-seed" type="number" min="0" value="1"></label>
+        </div>
+        <button type="submit" class="primary" data-t="run_cf">Erzeugen</button>
+        <button type="button" id="cf-use" data-t="use_cantus"
+          disabled>Als Cantus für den Kontrapunkt</button>
+      </form>
+
+      <form id="form-check" class="task" data-tab="check" hidden>
+        <label><span data-t="check_cantus">Cantus: Noten oder fux:NAME</span>
+        <textarea id="check-cantus" rows="2" placeholder="fux:dorian"></textarea></label>
+        <label><span data-t="check_others">Weitere Stimmen, eine pro Zeile als TYP=NOTEN</span>
+        <textarea id="check-others" rows="4" placeholder="S=a'1 a' g' a' b' c'' c'' b' d'' cis'' d''"></textarea></label>
+        <label class="row"><span data-t="mode">Modus</span>
+        <select id="check-mode"><option value="" data-t="from_cantus">aus dem Cantus</option></select></label>
+        <label><span data-t="check_file">oder eine MusicXML- oder Humdrum-Datei</span>
+        <input id="check-file" type="file" accept=".musicxml,.xml,.krn,application/vnd.recordare.musicxml+xml"></label>
+        <label><span data-t="check_text">Text der Stimmen</span>
+        <input id="check-text" type="text" placeholder="kyrie, gloria:1-5, none"></label>
+        <p class="help" data-t="check_text_help">Für Liedtext in MusicXML: leer, um den Text der
+        Datei zu nehmen oder den Abschnitt des Ordinariums zu erkennen; none prüft ohne
+        Textregeln.</p>
+        <label class="row"><span data-t="check_repeat">Wiederholung beim Erzeugen</span>
+        <select id="check-repeat">
+          <option value="auto" data-t="repeat_auto">automatisch</option>
+          <option value="keine" data-t="repeat_none">keine</option>
+          <option value="frei" data-t="repeat_free">frei</option>
+        </select></label>
+        <button type="submit" class="primary" data-t="run_check">Prüfen</button>
+      </form>
+
+      <form id="form-example" class="task" data-tab="example" hidden>
+        <label><span data-t="example">Beispiel aus dem Gradus (1725)</span>
+        <select id="example-figure" size="14"></select></label>
+        <button type="submit" class="primary" data-t="run_example">Zeigen</button>
+      </form>
+
+      <details id="rules">
+        <summary data-t="rules">Regeln ändern</summary>
+        <p data-t="rules_help">Eine Änderung pro Zeile: <code>ID=STUFE</code> oder
+        <code>ID.PARAMETER=WERT</code>, Stufen aus, P1–P4, V.</p>
+        <textarea id="rule-overrides" rows="4" placeholder="MEL-REPEAT=aus&#10;G3-ACCENT-LEAP=P2"
+          aria-label="Regeln"></textarea>
+        <input id="rule-search" list="rule-list" placeholder="Regel suchen"
+          aria-label="Regel suchen">
+        <datalist id="rule-list"></datalist>
+      </details>
+
+      <div id="storage">
+        <label><input id="remember" type="checkbox"> <span data-t="remember">Eingaben in diesem
+        Browser merken</span></label>
+        <button type="button" id="forget" data-t="forget">Gespeicherte Eingaben löschen</button>
+      </div>
+    </aside>
+
+    <main>
+      <div id="summary" aria-live="polite"></div>
+      <section id="mass-run" hidden>
+        <div class="run-head">
+          <span id="mass-status" role="status"></span>
+          <span class="spacer"></span>
+          <button type="button" id="mass-cancel" data-t="cancel" disabled>Abbrechen</button>
+          <button type="button" id="mass-resume" data-t="resume" hidden>Fehlende Teile setzen</button>
+          <button type="button" id="mass-result" data-t="show_result" hidden>Ergebnis zeigen</button>
+          <button type="button" id="save-book" data-t="save_book" disabled>Buch (LilyPond)</button>
+        </div>
+        <progress id="mass-progress" max="1" value="0"></progress>
+        <ol id="mass-list" class="parts"></ol>
+      </section>
+      <div id="results" role="listbox" aria-label="Ergebnisse"></div>
+      <div class="toolbar">
+        <button type="button" id="play" data-t="play" disabled>Abspielen</button>
+        <label><span>Tempo</span> <input id="tempo" type="number" min="20" max="200" value="72"></label>
+        <span class="spacer"></span>
+        <label><input id="original-clefs" type="checkbox"> <span data-t="original_clefs">Fux' Schlüssel</span></label>
+        <label><input id="entry-marks" type="checkbox" checked> <span data-t="entry_marks">Einsätze markieren</span></label>
+        <label><input id="show-text" type="checkbox"> <span data-t="as_text">als Text</span></label>
+        <button type="button" id="save-musicxml" disabled>MusicXML</button>
+        <button type="button" id="save-midi" disabled>MIDI</button>
+        <button type="button" id="save-ly" disabled>LilyPond</button>
+      </div>
+      <p id="part-alone" hidden></p>
+      <div id="notation" class="paper"></div>
+      <pre id="text" hidden></pre>
+    </main>
+
+    <aside id="report">
+      <h2 data-t="violations">Verstöße</h2>
+      <label><input id="only-forbidden" type="checkbox"> <span data-t="only_forbidden">nur Verbote</span></label>
+      <ol id="violations"></ol>
+    </aside>
+
+    <footer>
+      <span id="status" role="status"></span>
+      <span class="credits"
+        data-t="credits">Regelbasiert nach J. J. Fux, <i>Gradus ad Parnassum</i> (1725).
+      Notensatz: <a href="https://www.verovio.org">Verovio</a> (<a href="verovio/README.txt">LGPL</a>).</span>
+      <!-- The site's own pages, as in its footer; the page names stay German there too. The role
+        keeps the list a list for screen readers that drop it without bullets. -->
+      <ul class="legal" role="list">
+        <li><a href="https://timo-keller.de/">timo-keller.de</a></li>
+        <li><a href="https://timo-keller.de/contact.html" data-t="contact">Kontakt</a></li>
+        <li><a href="https://timo-keller.de/contact.html#impressum" lang="de">Impressum</a></li>
+        <li><a href="https://timo-keller.de/datenschutzerklaerung.html" lang="de">Datenschutzerklärung</a></li>
+      </ul>
+    </footer>
+
+    <script src="verovio/verovio-toolkit-wasm.js"></script>
+    <script>
+    // The notation toolkit, once its WebAssembly runs; null if verovio/ did not load.
+    window.verovioReady = new Promise((resolve) => {
+      if (!window.verovio) {
+        resolve(null);
+        return;
+      }
+      verovio.module.onRuntimeInitialized = () => resolve(new verovio.toolkit());
+    });
+    </script>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

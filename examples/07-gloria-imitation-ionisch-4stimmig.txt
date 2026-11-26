@@ -1,0 +1,15 @@
+ionisch – freier Satz, 4 Stimmen, 43 Takte, seed 6
+Text: Gloria: Et in terra 1–5 (36 Silben, 5 Sinnabschnitte), Wiederholung auto
+Binnenschlüsse: Takt 17 auf G: …vo-; Takt 33 auf E: …te.
+Punkt 1 („Et in ter-ra pax ho-mí-ni-bus bo-nae vo-lun-tá-tis.“): Tenor T. 1 F3 · Bass T. 2 C3 (Unterquarte) · Sopran T. 7 F4 (Oktave) · Alt T. 8 C4 (Quinte); Kopf 4–5 Töne, real; Binnenschluss T. 17 auf G
+Punkt 2 („Lau-dá-mus te. Be-ne-dí-ci-mus te.“): Tenor T. 18½ G3 · Alt T. 21½ C4 (Quarte) · Sopran T. 24½ G4 (Oktave); Kopf 4–5 Töne, real; Binnenschluss T. 33 auf E
+Punkt 3 („Ad-o-rá-mus te. Glo-ri-fi-cá-mus te.“): Alt T. 33½ C4 · Tenor T. 34½ G3 (Unterquarte); Kopf 6 Töne, real; Schluss T. 43 auf C
+ 1. Kosten 52
+      Sopran: r | r | r | r | r | r | F4 | A4 | G4 G4~ | G4 F4 | E4 E4 | D4 C4~ | C4 E4 | F4~ | F4 G4 G4~ | G4 F#4 | G4 | B4 C5 D5~ | D5 B4 C5~ | C5 C5 A4~ | A4 G4 F4 | G4 F4 | G4 | r G4 | G4 | A4 | G4 | B4 | B4 G4 | G4 F4 D4 E4 | F4 E4~ | E4 D4 | E4 | r | D4 F4 | F4 E4~ | E4 D4 E4 | r D5~ | D5 B4 A4~ | A4 G4 | A4 C5~ | C5 B4 | C5
+        Text: Et in ter-ra pax ho-mí-ni-bus bo-nae vo-lun-tá-tis. Lau-dá-mus te. Be-ne-dí-ci-mus te. Ad-o-rá-mus te. Glo-ri-fi-cá-mus te.
+      Alt: r | r | r | r | r | r | r | C4 | E4 | D4 D4 | B3 C4 | A3 G3 A3~ | A3 G3 | B3 | B3 C4 | D4 D4~ | D4 C4 | B3 D4 | E4 G4~ | G4 F4 | r C4 | C4 | D4 | C4 | E4 | D4~ | D4 D4 | B3 A3 | B3 | D4 D4~ | D4 B3 | D4 | r C4 | B3 G3 | A3 B3 | A3 | r C4~ | C4 B3 D4~ | D4 C4 | A3 B3 C4~ | C4 E4 F#4 | G4 G4 | E4
+        Text: Et in ter-ra pax ho-mí-ni-bus bo-nae vo-lun-tá-tis. Lau-dá-mus te. Be-ne-dí-ci-mus te. Ad-o-rá-mus te. Glo-ri-fi-cá-mus te.
+      Tenor: F3 | A3 | G3 G3 | A3 B3 D4~ | D4 C4 | B3 A3 F3~ | F3 G3 A3~ | A3 A3 | C4 B3 | A3 G3 A3~ | A3 G3 | F3 D3 E3~ | E3 F3 G3 | F3 E3 | F3 G3 | A3 | G3 | r G3 | G3 | A3 | G3 | G3 E3 F3~ | F3 | E3 E3 | G3 G3 | F#3 | G3 | r | r | r | r | r | r | r G3~ | G3 F3 | D3 E3 | F3 E3~ | E3 D3 | D3 F3 | E3 E3 | F3 G3 A3 B3 C4 | D4 | C4
+        Text: Et in ter-ra pax ho-mí-ni-bus bo-nae vo-lun-tá-tis. Lau-dá-mus te. Be-ne-dí-ci-mus te. Ad-o-rá-mus te. Glo-ri-fi-cá-mus te.
+      Bass: r | C3 | E3 | D3 D3 | B2 C3 | D3 | D3 | C3 B2 C3~ | C3 C3 | F3 F3 | G3 C3 | D3 B2 C3 D3 | E3 E3~ | E3 | D3 E3 | D3 | G2 | r | r | r | r E3~ | E3 D3 C3 | B2 G2 | A2 C3~ | C3 B2 C3~ | C3 | B2 G2~ | G2~ | G2 A2 B2~ | B2 C3 D3~ | D3 D3 G3 | F3 | E3 | G3 | F3 D3~ | D3 C3 B2 | A2 C3 | B2 B2~ | B2 G2 A2 | C3 C3 | A2 | G2 | C3
+        Text: Et in ter-ra pax ho-mí-ni-bus bo-nae vo-lun-tá-tis. Lau-dá-mus te. Be-ne-dí-ci-mus te. Ad-o-rá-mus te. Glo-ri-fi-cá-mus te.

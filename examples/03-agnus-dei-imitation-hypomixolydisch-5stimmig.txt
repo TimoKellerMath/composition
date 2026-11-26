@@ -1,0 +1,17 @@
+hypomixolydisch – freier Satz, 5 Stimmen, 43 Takte, seed 5
+Text: Agnus Dei I und II (18 Silben, 3 Sinnabschnitte), Wiederholung auto
+Binnenschlüsse: Takt 26 auf C: …De-i,; Takt 33 auf C: …tol-lis
+Punkt 1 („A-gnus De-i,“): Sopran T. 1 D5 · Tenor 1 T. 3½ G3 (Unterduodezime) · Bass T. 7½ D3 (Unterdoppeloktave) · Tenor 2 T. 14½ D4 (Unteroktave) · Alt T. 18 G4 (Unterquinte); Kopf 5–9 Töne, real; Binnenschluss T. 26 auf C
+Punkt 2 („qui tol-lis pec-cá-ta mun-di:“): Tenor 1 T. 26½ G3 · Alt T. 27½ D4 (Quinte); Kopf 5 Töne, real; Binnenschluss T. 33 auf C
+Punkt 3 („mi-se-ré-re no-bis.“): Tenor 1 T. 34½ D4 · Alt T. 36½ G4 (Quarte); Kopf 7 Töne, real; Schluss T. 43 auf G
+ 1. Kosten 126
+      Sopran: D5 | D5 | E5 | D5 B4 | B4 G4 F4 E4 | D4 | E4 D4 | F4 G4 F4~ | F4 D4 C4 | C4 D4~ | D4 E4 C4 | D4 F4 | E4 F4 | E4 F4~ | F4 | G4 A4~ | A4 F4 | G4~ | G4 G4 | r C5~ | C5 B4 A4 | F4 G4 | A4 | A4 G4 C5~ | C5 B4 | C5 | B4 B4~ | B4 A4 | G4 B4~ | B4 A4 G4 | A4 C5~ | C5 B4 | C5 | B4 B4~ | B4 A4 F4 | G4 G4 | C5 C5~ | C5 B4 | D5 | D5 C5 | C5 G4~ | G4 F#4 | G4
+        Text: A-gnus De-i, A-gnus De-i, A-gnus De-i, A-gnus De-i, qui tol-lis pec-cá-ta mun-di: mi-se-ré-re no-bis.
+      Alt: r | r | r | r | r | r | r | r | r | r | r | r | r | r | r | r | r | G4 | G4 | A4 | G4 E4 | F4 | E4 F4 | G4 E4~ | E4 D4 | E4 | r D4 | F4 | G4 | F4 | A4 G4 F#4 | G4 G4~ | G4 F4 E4~ | E4 D4 F4~ | F4 F4 | r G4 | G4 A4 | E4 F4~ | F4 D4 | E4 G4~ | G4 G4 | F4 E4 D4~ | D4
+        Text: A-gnus De-i, qui tol-lis pec-cá-ta mun-di: mi-se-ré-re no-bis.
+      Tenor 1: r | r | r G3~ | G3 G3~ | G3 A3~ | A3 G3 | E3 F3~ | F3 F3 | A3 G3 | A3 F3 | G3 E3 | F3 G3 B3~ | B3 A3 B3~ | B3 C4 D4~ | D4~ | D4 C4 | D4 | E4 | E4 | r E4 | D4 B3 | B3 A3~ | A3 C4 D4 | C4 C4 | r | r G3 | B3 | C4 | B3 | D4 E4 | D4 E4~ | E4 D4 | E4 | r D4~ | D4 D4 | E4 B3 | C4 | A3 B3 | A3 | B3 G3 | G3 B3 | A3 | B3
+        Text: A-gnus De-i, A-gnus De-i, A-gnus De-i, qui tol-lis pec-cá-ta mun-di: mi-se-ré-re no-bis. mi-se-ré-re no-bis.
+      Tenor 2: r | r | r | r | r | r | r | r | r | r | r | r | r | r D4 | D4 | E4 | D4 B3 | C4 | B3 C4~ | C4 D4 C4 | B3 | A3 | A3 | C4 C4 | D4 | C4 | r G3 | A3 | B3 G3 | A3 B3 D4~ | D4 D4 C4 | D4 | C4 | r B3 | A3 A3 | B3 | B3 A3~ | A3 A3 F3~ | F3 | E3 D3 E3~ | E3 G3 | A3 | G3
+        Text: A-gnus De-i, A-gnus De-i, qui tol-lis pec-cá-ta mun-di: mi-se-ré-re no-bis.
+      Bass: r | r | r | r | r | r | r D3~ | D3 D3~ | D3 E3~ | E3 D3 | B2 C3~ | C3 B2 | C3 D3 | G3 F3 E3 D3 | F3 | E3 | F3 D3 | C3 D3 | E3 | A2 | B2 E3~ | E3 D3 A2~ | A2 B2 | C3 E3 | G3 | C3 | D3 G3 | F3 E3 F3~ | F3 E3 | D3 D3~ | D3 D3 A3 | G3 | C3 | D3 E3 | F3 F3 | E3 E3~ | E3 A2 B2 | C3 D3~ | D3~ | D3 G2 C3 | C3 B2 | D3 | G2
+        Text: A-gnus De-i, A-gnus De-i, A-gnus De-i, qui tol-lis pec-cá-ta mun-di: mi-se-ré-re no-bis.

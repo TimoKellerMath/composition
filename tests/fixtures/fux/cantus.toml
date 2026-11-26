@@ -1,0 +1,53 @@
+# Fux' Cantus firmi aus dem Gradus ad Parnassum (1725), in der Lage der zweistimmigen Beispiele.
+# Notennamen in wissenschaftlicher Schreibweise (C4 = eingestrichenes c).
+#
+# Geprüft gegen zwei unabhängige Übertragungen, die übereinstimmen:
+# - MarkGotham/species, nach dem Druck von 1725 (references/datasets/gotham-species)
+# - FuxCP5, figureTests.cpp, nach Manns Übersetzung (github.com/TomLaiUCL/FuxCP5)
+#
+# tools/import_gotham.py ordnet jedem Beispiel in gradus-*st.toml den passenden Eintrag zu
+# (Vergleich der Tonnamen, unabhängig von der Oktavlage).
+
+[[cantus]]
+id = "dorian"
+mode = "dorian"
+notes = "D4 F4 E4 D4 G4 F4 A4 G4 F4 E4 D4"
+
+[[cantus]]
+id = "phrygian"
+mode = "phrygian"
+notes = "E4 C4 D4 C4 A3 A4 G4 E4 F4 E4"
+
+[[cantus]]
+id = "lydian"
+mode = "lydian"
+notes = "F3 G3 A3 F3 D3 E3 F3 C4 A3 F3 G3 F3"
+
+[[cantus]]
+id = "mixolydian"
+mode = "mixolydian"
+notes = "G3 C4 B3 G3 C4 E4 D4 G4 E4 C4 D4 B3 A3 G3"
+
+[[cantus]]
+id = "aeolian"
+mode = "aeolian"
+notes = "A3 C4 B3 D4 C4 E4 F4 E4 D4 C4 B3 A3"
+
+[[cantus]]
+id = "ionian"
+mode = "ionian"
+notes = "C4 E4 F4 G4 E4 A4 G4 E4 F4 E4 D4 C4"
+
+# Varianten, die Fux in einzelnen Beispielen verwendet.
+
+[[cantus]]
+id = "aeolian-fig42"
+mode = "aeolian"
+variant_of = "aeolian"
+notes = "A3 C4 B3 C4 E4 F4 E4 D4 C4 B3 A3"  # Fig. 42: ohne das vierte D
+
+[[cantus]]
+id = "ionian-fig88"
+mode = "ionian"
+variant_of = "ionian"
+notes = "C4 D4 F4 E4 G4 F4 E4 D4 C4"  # Fig. 88a/b: eigener, kürzerer Cantus

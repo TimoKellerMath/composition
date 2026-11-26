@@ -1,0 +1,6 @@
+{
+  "name": "fux-fuge-web",
+  "private": true,
+  "description": "The page of fux-fuge; the scripts are ES modules (for Node.js in the tests).",
+  "type": "module"
+}

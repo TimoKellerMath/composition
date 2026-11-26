@@ -1,0 +1,24 @@
+[package]
+name = "fux-web"
+description = "The web version of fux: a WebAssembly module that answers JSON requests"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+anyhow.workspace = true
+fux-cli.workspace = true
+fux-core.workspace = true
+fux-export.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+
+# Not the workspace's lints: the exports for JavaScript need `#[unsafe(no_mangle)]`, allowed in
+# `ffi` only.
+[lints.rust]
+unsafe_code = "deny"

@@ -1,0 +1,155 @@
+Missa brevis – ionisch, transponiert nach F, S A T B, Seed 2: 6 Sätze, 10 Abschnitte, 26 Teile, 657 Silben, Hauptstufe C
+geschätzt 900 Takte, etwa 2 min (Browser, 4 Worker: etwa 3 min)
+Kyrie: Kyrie I (Imitation) → F ‖ Christe (Imitation) → C ‖ Kyrie II (Imitation) → F
+Gloria: gloria:1-5 (Imitation) → F · gloria:6-9 (gemeinsam, Halbe Atem) → C · gloria:10-13 (Imitation, Halbe Atem) → F · Qui tollis (gemeinsam, Takt Pause) → C · qui-tollis:5-8 (Imitation, Halbe Atem) → C · qui-tollis:9-13 (gemeinsam, Halbe Atem) → F
+Credo: credo:1-4 (Imitation) → F · credo:5-7 (gemeinsam, Halbe Atem) → F · credo:8-14 (gemeinsam, Halbe Atem) → C · credo:15-16 (gemeinsam, Halbe Atem) → F · Et incarnatus est (gemeinsam, Takt Pause) → C · Crucifixus (gemeinsam, Takt Pause) → F · resurrexit:1-4 (gemeinsam, Halbe Atem) → C · resurrexit:5-7 (gemeinsam, Halbe Atem) → F · spiritum:1-4 (gemeinsam, Halbe Atem) → C · spiritum:5-7 (gemeinsam, Halbe Atem) → F · spiritum:8-9 (gemeinsam, Halbe Atem) → C · spiritum:10-12 (gemeinsam, Halbe Atem) → F
+Sanctus: Sanctus (Imitation) → F
+Benedictus: Benedictus (S A T, Imitation) → C ‖ Osanna (gemeinsam) → F
+Agnus Dei: Agnus Dei I (Imitation) → F ‖ Agnus Dei II (S A T T B, Imitation) → F
+[ 1/26] Kyrie · Kyrie I (Imitation), S A T B, Schluss F, Seed 3006273212579205359: 36 Takte, Kosten 50
+  ionisch, transponiert nach F – freier Satz, 4 Stimmen, 36 Takte, Schluss auf F, seed 3006273212579205359
+  Text: Kyrie I (7 Silben, 1 Sinnabschnitt), Wiederholung auto
+  Binnenschlüsse: Takt 24 auf F: …e-lé-i-son.
+  Punkt 1 („Ký-ri-e e-lé-i-son.“): Alt T. 1 F3 · Sopran T. 5 F4 (Oktave) · Bass T. 9½ C3 (Unterquarte) · Tenor T. 15½ C4 (Quinte); Kopf 5–7 Töne, real; Binnenschluss T. 24 auf F
+  Punkt 2 („e-lé-i-son.“): Alt T. 25½ C4 · Tenor T. 29½ F3 (Unterquinte); Kopf 6 Töne, real; Schluss T. 36 auf F
+[ 2/26] Kyrie · Christe (Imitation), S A T B, Schluss C, Seed 10141803987331043628: 27 Takte, Kosten 64
+  ionisch, transponiert nach F – freier Satz, 4 Stimmen, 27 Takte, Schluss auf C, seed 10141803987331043628
+  Text: Christe (6 Silben, 1 Sinnabschnitt), Wiederholung auto
+  Binnenschlüsse: Takt 16 auf C: …e-lé-i-son.
+  Punkt 1 („Chri-ste e-lé-i-son.“): Tenor T. 1 C4 · Bass T. 4 F3 (Unterquinte) · Sopran T. 7 C5 (Oktave) · Alt T. 11 C4 (Einklang); Kopf 5 Töne, real; Binnenschluss T. 16 auf C
+  Punkt 2 („e-lé-i-son.“): Bass T. 17½ F3 · Alt T. 20½ C4 (Quinte); Kopf 6 Töne, real; Schluss T. 27 auf C
+[ 3/26] Kyrie · Kyrie II (Imitation), S A T B, Schluss F, Seed 12918062124800966642: 27 Takte, Kosten 106
+  ionisch, transponiert nach F – freier Satz, 4 Stimmen, 27 Takte, Schluss auf F, seed 12918062124800966642
+  Text: Kyrie II (7 Silben, 1 Sinnabschnitt), Wiederholung auto
+  Binnenschlüsse: Takt 19 auf C: …e-lé-i-son.
+  Punkt 1 („Ký-ri-e e-lé-i-son.“): Bass T. 1 B2 · Tenor T. 2 F3 (Quinte) · Alt T. 10 B3 (Oktave) · Sopran T. 11½ F4 (Duodezime); Kopf 5–8 Töne, real; Binnenschluss T. 19 auf C
+  Punkt 2 („e-lé-i-son.“): Tenor T. 20½ F3 · Alt T. 21½ F3 (Einklang); Kopf 6 Töne, real; Schluss T. 27 auf F
+[ 4/26] Gloria · gloria:1-5 (Imitation), S A T B, Schluss F, Seed 5383919779136116180: 38 Takte, Kosten 141
+  ionisch, transponiert nach F – freier Satz, 4 Stimmen, 38 Takte, Schluss auf F, seed 5383919779136116180
+  Text: Gloria: Et in terra 1–5 (36 Silben, 5 Sinnabschnitte), Wiederholung auto
+  Binnenschlüsse: Takt 16 auf F: …bo-; Takt 28 auf C: …Be-ne-dí-ci-mus
+  Punkt 1 („Et in ter-ra pax ho-mí-ni-bus bo-nae vo-lun-tá-tis.“): Bass T. 1 F3 · Alt T. 2 C4 (Quinte) · Sopran T. 5 C5 (Duodezime) · Tenor T. 6 F3 (Einklang); Kopf 4–5 Töne, real; Binnenschluss T. 16 auf F
+  Punkt 2 („Lau-dá-mus te. Be-ne-dí-ci-mus te.“): Tenor T. 17½ B3 · Alt T. 21½ F3 (Unterquarte); Kopf 6 Töne, real; Binnenschluss T. 28 auf C
+  Punkt 3 („Ad-o-rá-mus te. Glo-ri-fi-cá-mus te.“): Bass T. 29½ B2 · Alt T. 30½ B3 (Oktave); Kopf 4–7 Töne, real; Schluss T. 38 auf F
+[ 5/26] Gloria · gloria:6-9 (gemeinsam), S A T B, Schluss C, Seed 12257029367675001624: 31 Takte, Kosten 176
+  ionisch, transponiert nach F – freier Satz, 4 Stimmen, 31 Takte, Schluss auf C, seed 12257029367675001624
+  Text: Gloria: Et in terra 6–9 (34 Silben, 4 Sinnabschnitte), Wiederholung auto
+  Binnenschlüsse: Takt 8 auf F: …pro-; Takt 15 auf F: …tu-am.; Takt 20 auf D: …Rex; Takt 23 auf D: …cae-lé-stis,
+[ 6/26] Gloria · gloria:10-13 (Imitation), S A T B, Schluss F, Seed 12595101601114429364: 33 Takte, Kosten 44
+  ionisch, transponiert nach F – freier Satz, 4 Stimmen, 33 Takte, Schluss auf F, seed 12595101601114429364
+  Text: Gloria: Et in terra 10–13 (28 Silben, 4 Sinnabschnitte), Wiederholung auto
+  Binnenschlüsse: Takt 20 auf F: …Chri-ste.
+  Punkt 1 („Dó-mi-ne Fi-li u-ni-gé-ni-te Je-su Chri-ste.“): Tenor T. 1½ F4 · Sopran T. 5½ C5 (Quinte) · Alt T. 6½ F4 (Einklang) · Bass T. 9½ C3 (Unterundezime); Kopf 4–6 Töne, real; Binnenschluss T. 20 auf F
+  Punkt 2 („Dó-mi-ne De-us, A-gnus De-i, Fí-li-us Pa-tris.“): Alt T. 21½ C4 · Tenor T. 22½ F3 (Unterquinte); Kopf 6 Töne, real; Schluss T. 33 auf F
+[ 7/26] Gloria · Qui tollis (gemeinsam), S A T B, Schluss C, Seed 9512109297405722503: 31 Takte, Kosten 104
+  ionisch, transponiert nach F – freier Satz, 4 Stimmen, 31 Takte, Schluss auf C, seed 9512109297405722503
+  Text: Gloria: Qui tollis 1–4 (33 Silben, 4 Sinnabschnitte), Wiederholung auto
+  Binnenschlüsse: Takt 8 auf A: …mun-di,; Takt 13 auf B: …no-bis.; Takt 20 auf B: …mun-di,; Takt 23 auf F: …sús-ci-pe
+[ 8/26] Gloria · qui-tollis:5-8 (Imitation), S A T B, Schluss C, Seed 17963974477652271985: 57 Takte, Kosten 204
+  ionisch, transponiert nach F – freier Satz, 4 Stimmen, 57 Takte, Schluss auf C, seed 17963974477652271985
+  Text: Gloria: Qui tollis 5–8 (29 Silben, 4 Sinnabschnitte), Wiederholung auto
+  Binnenschlüsse: Takt 19 auf F: …se-des; Takt 36 auf C: …no-bis.; Takt 45 auf F: …san-ctus.
+  Punkt 1 („Qui se-des ad déx-te-ram Pa-tris,“): Bass T. 1½ F3 · Sopran T. 4½ C5 (Duodezime) · Tenor T. 10 C4 (Quinte) · Alt T. 13½ F4 (Oktave); Kopf 5–7 Töne, real; Binnenschluss T. 19 auf F
+  Punkt 2 („mi-se-ré-re no-bis.“): Bass T. 20½ C3 · Tenor T. 24½ F4 (Undezime) · Alt T. 28½ C4 (Oktave) · Sopran T. 29½ C5 (Doppeloktave); Kopf 4–8 Töne, real; Binnenschluss T. 36 auf C
+  Punkt 3 („Quó-ni-am tu so-lus san-ctus.“): Tenor T. 37½ F3 · Alt T. 39½ F3 (Einklang); Kopf 4 Töne, real; Binnenschluss T. 45 auf F
+  Punkt 4 („Tu so-lus Dó-mi-nus.“): Sopran T. 46½ C5 · Tenor T. 47½ F3 (Unterduodezime) · Alt T. 52½ C4 (Unteroktave); Kopf 4 Töne, real; Schluss T. 57 auf C
+[ 9/26] Gloria · qui-tollis:9-13 (gemeinsam), S A T B, Schluss F, Seed 4897968628128850125: 26 Takte, Kosten 86
+  ionisch, transponiert nach F – freier Satz, 4 Stimmen, 26 Takte, Schluss auf F, seed 4897968628128850125
+  Text: Gloria: Qui tollis 9–13 (27 Silben, 5 Sinnabschnitte), Wiederholung auto
+  Binnenschlüsse: Takt 7 auf C: …Al-tís-si-mus,; Takt 11 auf B: …Chri-ste.; Takt 23 auf F: …Pa-tris.
+[10/26] Credo · credo:1-4 (Imitation), S A T B, Schluss F, Seed 9968792429507980275: 44 Takte, Kosten 244
+  ionisch, transponiert nach F – freier Satz, 4 Stimmen, 44 Takte, Schluss auf F, seed 9968792429507980275
+  Text: Credo: Patrem 1–4 (30 Silben, 4 Sinnabschnitte), Wiederholung auto
+  Binnenschlüsse: Takt 16 auf C: …o-mni-; Takt 26 auf D: …et; Takt 35 auf D: …ó-mni-um,
+  Punkt 1 („Pa-trem o-mni-pot-én-tem,“): Alt T. 1 B3 · Sopran T. 3 F4 (Quinte) · Tenor T. 5 F3 (Unterquarte) · Bass T. 10 F3 (Unterquarte); Kopf 4 Töne, real; Binnenschluss T. 16 auf C
+  Punkt 2 („fa-ctó-rem cae-li et ter-rae,“): Tenor T. 17½ C4 · Alt T. 20½ F3 (Unterquinte); Kopf 7 Töne, real; Binnenschluss T. 26 auf D
+  Punkt 3 („vi-si-bí-li-um ó-mni-um,“): Alt T. 27½ C4 · Tenor T. 28½ F3 (Unterquinte) · Sopran T. 29½ C5 (Oktave); Kopf 4–6 Töne, real; Binnenschluss T. 35 auf D
+  Punkt 4 („et in-vi-si-bí-li-um.“): Alt T. 35½ B3 · Sopran T. 37½ F4 (Quinte); Kopf 4–6 Töne, real; Schluss T. 44 auf F
+[11/26] Credo · credo:5-7 (gemeinsam), S A T B, Schluss F, Seed 3994384096046631075: 32 Takte, Kosten 108
+  ionisch, transponiert nach F – freier Satz, 4 Stimmen, 32 Takte, Schluss auf F, seed 3994384096046631075
+  Text: Credo: Patrem 5–7 (35 Silben, 3 Sinnabschnitte), Wiederholung auto
+  Binnenschlüsse: Takt 7 auf F: …Dó-mi-num; Takt 19 auf F: …u-ni-gé-ni-tum.; Takt 24 auf B: …an-
+[12/26] Credo · credo:8-14 (gemeinsam), S A T B, Schluss C, Seed 18386099455460522048: 38 Takte, Kosten 105
+  ionisch, transponiert nach F – freier Satz, 4 Stimmen, 38 Takte, Schluss auf C, seed 18386099455460522048
+  Text: Credo: Patrem 8–14 (42 Silben, 7 Sinnabschnitte), Wiederholung auto
+  Binnenschlüsse: Takt 10 auf B: …lú-mi-ne,; Takt 18 auf F: …ve-ro.; Takt 30 auf B: …Pa-tri:
+[13/26] Credo · credo:15-16 (gemeinsam), S A T B, Schluss F, Seed 13619629548197593722: 21 Takte, Kosten 73
+  ionisch, transponiert nach F – freier Satz, 4 Stimmen, 21 Takte, Schluss auf F, seed 13619629548197593722
+  Text: Credo: Patrem 15–16 (21 Silben, 2 Sinnabschnitte), Wiederholung auto
+  Binnenschlüsse: Takt 7 auf F: …hó-mi-nes,; Takt 15 auf C: …de-scén-dit
+[14/26] Credo · Et incarnatus est (gemeinsam), S A T B, Schluss C, Seed 16899033210170648230: 24 Takte, Kosten 113
+  ionisch, transponiert nach F – freier Satz, 4 Stimmen, 24 Takte, Schluss auf C, seed 16899033210170648230
+  Text: Credo: Et incarnatus (25 Silben, 2 Sinnabschnitte), Wiederholung auto
+  Binnenschlüsse: Takt 6 auf F: …in-car-; Takt 12 auf F: …Spí-ri-tu; Takt 18 auf C: …Ma-rí-
+[15/26] Credo · Crucifixus (gemeinsam), S A T B, Schluss F, Seed 1164077043775494882: 23 Takte, Kosten 106
+  ionisch, transponiert nach F – freier Satz, 4 Stimmen, 23 Takte, Schluss auf F, seed 1164077043775494882
+  Text: Credo: Crucifixus (24 Silben, 3 Sinnabschnitte), Wiederholung auto
+  Binnenschlüsse: Takt 18 auf C: …pas-
+[16/26] Credo · resurrexit:1-4 (gemeinsam), S A T B, Schluss C, Seed 5944595880282496943: 29 Takte, Kosten 128
+  ionisch, transponiert nach F – freier Satz, 4 Stimmen, 29 Takte, Schluss auf C, seed 5944595880282496943
+  Text: Credo: Et resurrexit 1–4 (31 Silben, 4 Sinnabschnitte), Wiederholung auto
+  Binnenschlüsse: Takt 9 auf C: …se-cún-; Takt 15 auf F: …Scri-ptú-ras.
+[17/26] Credo · resurrexit:5-7 (gemeinsam), S A T B, Schluss F, Seed 8055502591978595983: 29 Takte, Kosten 75
+  ionisch, transponiert nach F – freier Satz, 4 Stimmen, 29 Takte, Schluss auf F, seed 8055502591978595983
+  Text: Credo: Et resurrexit 5–7 (31 Silben, 3 Sinnabschnitte), Wiederholung auto
+  Binnenschlüsse: Takt 11 auf C: …gló-ri-a,; Takt 20 auf F: …et
+[18/26] Credo · spiritum:1-4 (gemeinsam), S A T B, Schluss C, Seed 258540279201801302: 26 Takte, Kosten 115
+  ionisch, transponiert nach F – freier Satz, 4 Stimmen, 26 Takte, Schluss auf C, seed 258540279201801302
+  Text: Credo: Et in Spiritum 1–4 (27 Silben, 4 Sinnabschnitte), Wiederholung auto
+  Binnenschlüsse: Takt 7 auf D: …San-ctum,; Takt 15 auf F: …vi-vi-fi-cán-
+[19/26] Credo · spiritum:5-7 (gemeinsam), S A T B, Schluss F, Seed 8415682667416379436: 28 Takte, Kosten 156
+  ionisch, transponiert nach F – freier Satz, 4 Stimmen, 28 Takte, Schluss auf F, seed 8415682667416379436
+  Text: Credo: Et in Spiritum 5–7 (30 Silben, 3 Sinnabschnitte), Wiederholung auto
+  Binnenschlüsse: Takt 8 auf C: …et; Takt 13 auf C: …Fí-li-o; Takt 19 auf F: …con-
+[20/26] Credo · spiritum:8-9 (gemeinsam), S A T B, Schluss C, Seed 9632710938349087459: 35 Takte, Kosten 100
+  ionisch, transponiert nach F – freier Satz, 4 Stimmen, 35 Takte, Schluss auf C, seed 9632710938349087459
+  Text: Credo: Et in Spiritum 8–9 (38 Silben, 2 Sinnabschnitte), Wiederholung auto
+  Binnenschlüsse: Takt 5 auf B: …san-ctam; Takt 17 auf F: …Ec-clé-si-am.; Takt 25 auf C: …ba-ptís-ma
+[21/26] Credo · spiritum:10-12 (gemeinsam), S A T B, Schluss F, Seed 6623939663801245674: 24 Takte, Kosten 67
+  ionisch, transponiert nach F – freier Satz, 4 Stimmen, 24 Takte, Schluss auf F, seed 6623939663801245674
+  Text: Credo: Et in Spiritum 10–12 (25 Silben, 3 Sinnabschnitte), Wiederholung auto
+  Binnenschlüsse: Takt 13 auf F: …vi-; Takt 21 auf C: …saé-cu-li.
+[22/26] Sanctus · Sanctus (Imitation), S A T B, Schluss F, Seed 11044485316732014511: 65 Takte, Kosten 154
+  ionisch, transponiert nach F – freier Satz, 4 Stimmen, 65 Takte, Schluss auf F, seed 11044485316732014511
+  Text: Sanctus · Pleni · Osanna (34 Silben, 5 Sinnabschnitte), Wiederholung auto
+  Binnenschlüsse: Takt 23 auf B: …San-ctus,; Takt 33 auf F: …Sá-ba-oth.; Takt 41 auf F: …ter-ra; Takt 57 auf F: …tu-a.
+  Punkt 1 („San-ctus, San-ctus, San-ctus“): Tenor T. 1 B3 · Bass T. 5 F3 (Unterquarte) · Sopran T. 6 B4 (Oktave) · Alt T. 14 B3 (Einklang); Kopf 4–9 Töne, real; Binnenschluss T. 23 auf B
+  Punkt 2 („Dó-mi-nus De-us Sá-ba-oth.“): Tenor T. 24½ C4 · Alt T. 26½ C4 (Einklang); Kopf 6 Töne, real; Binnenschluss T. 33 auf F
+  Punkt 3 („Ple-ni sunt cae-li et ter-ra“): Sopran T. 34½ F4 · Alt T. 35½ F3 (Unteroktave); Kopf 4 Töne, real; Binnenschluss T. 41 auf F
+  Punkt 4 („gló-ri-a tu-a.“): Sopran T. 42½ C5 · Alt T. 45½ C4 (Unteroktave) · Bass T. 51 F3 (Unterduodezime); Kopf 5 Töne, real; Binnenschluss T. 57 auf F
+  Punkt 5 („Ho-sán-na in ex-cél-sis.“): Alt T. 57½ C4 · Bass T. 58½ F3 (Unterquinte); Kopf 4–7 Töne, real; Schluss T. 65 auf F
+[23/26] Benedictus · Benedictus (Imitation), S A T, Schluss C, Seed 8833229408415625101: 43 Takte, Kosten 141
+  ionisch, transponiert nach F – freier Satz, 3 Stimmen, 43 Takte, Schluss auf C, seed 8833229408415625101
+  Text: Benedictus (14 Silben, 1 Sinnabschnitt), Wiederholung auto
+  Binnenschlüsse: Takt 12 auf F: …ve-nit; Takt 24 auf C: …Dó-mi-ni.; Takt 33 auf F: …Be-ne-dí-ctus
+  Punkt 1 („Be-ne-dí-ctus qui ve-nit“): Tenor T. 1 C4 · Sopran T. 5 F4 (Quarte) · Alt T. 6 C4 (Einklang); Kopf 7 Töne, real; Binnenschluss T. 12 auf F
+  Punkt 2 („in nó-mi-ne Dó-mi-ni.“): Tenor T. 13½ F4 · Sopran T. 15½ C5 (Quinte) · Alt T. 18½ C4 (Unterquarte); Kopf 6–8 Töne, real; Binnenschluss T. 24 auf C
+  Punkt 3 („Be-ne-dí-ctus qui ve-nit“): Tenor T. 25½ C4 · Alt T. 26½ F3 (Unterquinte); Kopf 5–7 Töne, real; Binnenschluss T. 33 auf F
+  Punkt 4 („in nó-mi-ne Dó-mi-ni.“): Tenor T. 34½ F4 · Alt T. 36½ C4 (Unterquarte); Kopf 8 Töne, real; Schluss T. 43 auf C
+[24/26] Benedictus · Osanna (gemeinsam), S A T B, Schluss F, Seed 14414345793190092827: 25 Takte, Kosten 61
+  ionisch, transponiert nach F – freier Satz, 4 Stimmen, 25 Takte, Schluss auf F, seed 14414345793190092827
+  Text: Benedictus: Osanna (7 Silben, 1 Sinnabschnitt), Wiederholung auto
+  Binnenschlüsse: Takt 11 auf C: …ex-cél-sis.
+[25/26] Agnus Dei · Agnus Dei I (Imitation), S A T B, Schluss F, Seed 10465525117985259793: 72 Takte, Kosten 252
+  ionisch, transponiert nach F – freier Satz, 4 Stimmen, 72 Takte, Schluss auf F, seed 10465525117985259793
+  Text: Agnus Dei I und II (18 Silben, 3 Sinnabschnitte), Wiederholung auto
+  Binnenschlüsse: Takt 16 auf C: …De-i,; Takt 27 auf D: …mun-di:; Takt 50 auf F: …no-bis.; Takt 59 auf C: …no-bis.
+  Punkt 1 („A-gnus De-i,“): Bass T. 1 C3 · Tenor T. 4 C4 (Oktave) · Alt T. 5 F3 (Quarte) · Sopran T. 8 F4 (Undezime); Kopf 4–7 Töne, real und modal; Binnenschluss T. 16 auf C
+  Punkt 2 („qui tol-lis pec-cá-ta mun-di:“): Bass T. 17½ F3 · Tenor T. 19 C4 (Quinte) · Alt T. 22 C4 (Quinte); Kopf 4 Töne, real; Binnenschluss T. 27 auf D
+  Punkt 3 („mi-se-ré-re no-bis.“): Tenor T. 28½ C4 · Sopran T. 31½ F4 (Quarte) · Bass T. 38½ C3 (Unteroktave) · Alt T. 44½ C4 (Einklang); Kopf 5–6 Töne, real; Binnenschluss T. 50 auf F
+  Punkt 4 („A-gnus De-i,“): Tenor T. 51½ C4 · Alt T. 52½ F3 (Unterquinte); Kopf 4–7 Töne, real; Binnenschluss T. 59 auf C
+  Punkt 5 („qui tol-lis pec-cá-ta mun-di:“): Bass T. 60½ F3 · Alt T. 62½ C4 (Quinte); Kopf 4 Töne, real; Schluss T. 72 auf F
+[26/26] Agnus Dei · Agnus Dei II (Imitation), S A T T B, Schluss F, Seed 5886700181808793467: 43 Takte, Kosten 176
+  ionisch, transponiert nach F – freier Satz, 5 Stimmen, 43 Takte, Schluss auf F, seed 5886700181808793467
+  Text: Agnus Dei III (18 Silben, 3 Sinnabschnitte), Wiederholung auto
+  Binnenschlüsse: Takt 20 auf C: …De-i,; Takt 29 auf C: …De-i,
+  Punkt 1 („A-gnus De-i,“): Sopran T. 1 C5 · Alt T. 2 F4 (Unterquinte) · Tenor 1 T. 5 C4 (Unteroktave) · Bass T. 6 F3 (Unterduodezime) · Tenor 2 T. 11 C4 (Unteroktave); Kopf 5–8 Töne, real; Binnenschluss T. 20 auf C
+  Punkt 2 („qui tol-lis pec-cá-ta mun-di:“): Alt T. 20½ C4 · Tenor 1 T. 23½ C4 (Einklang); Kopf 5–7 Töne, real; Binnenschluss T. 29 auf C
+  Punkt 3 („do-na no-bis pa-cem.“): Bass T. 30½ F3 · Tenor 1 T. 32½ C4 (Quinte) · Alt T. 37 F3 (Einklang); Kopf 5 Töne, real; Schluss T. 43 auf F
+Kyrie – Kadenzplan: T. 24 F · T. 36 F ‖ T. 52 C · T. 63 C ‖ T. 82 C · T. 90 F
+Gloria – Kadenzplan: T. 16 F · T. 28 C · T. 38 F (Naht) · T. 46 F · T. 53 F · T. 58 D · T. 61 D · T. 69 C (Naht) · T. 89 F · T. 102 F | T. 110 A · T. 115 B · T. 122 B · T. 125 F · T. 133 C (Naht) · T. 152 F · T. 169 C · T. 178 F · T. 190 C (Naht) · T. 197 C · T. 201 B · T. 213 F · T. 216 F
+Credo – Kadenzplan: T. 16 C · T. 26 D · T. 35 D · T. 44 F (Naht) · T. 51 F · T. 63 F · T. 68 B · T. 76 F (Naht) · T. 86 B · T. 94 F · T. 106 B · T. 114 C (Naht) · T. 121 F · T. 129 C · T. 135 F | T. 141 F · T. 147 F · T. 153 C · T. 159 C | T. 177 C · T. 182 F (Naht) · T. 191 C · T. 197 F · T. 211 C (Naht) · T. 222 C · T. 231 F · T. 240 F (Naht) · T. 247 D · T. 255 F · T. 266 C (Naht) · T. 274 C · T. 279 C · T. 285 F · T. 294 F (Naht) · T. 299 B · T. 311 F · T. 319 C · T. 329 C (Naht) · T. 342 F · T. 350 C · T. 353 F
+Sanctus – Kadenzplan: T. 23 B · T. 33 F · T. 41 F · T. 57 F · T. 65 F
+Benedictus – Kadenzplan: T. 12 F · T. 24 C · T. 33 F · T. 43 C ‖ T. 54 C · T. 68 F
+Agnus Dei – Kadenzplan: T. 16 C · T. 27 D · T. 50 F · T. 59 C · T. 72 F ‖ T. 92 C · T. 101 C · T. 115 F
+Gesamt: 26 von 26 Teilen, 907 Takte, Kosten 3149, keine Warnung

@@ -1,0 +1,8 @@
+Fuge über WTK I/1, BWV 846, C-Dur
+C 4/4, 3 Stimmen, 38 Takte, 989 Töne (407 vorgegeben), 6.0 s
+Antwort: r8 g'8 a'8 b'8 c''8. d''32 c''32 b'8 e''8 a'8 d''8. e''16 d''16 c''16 b'16 (real)
+Takte: 1 Thema, 2 Antwort, 4 Codetta, 5 Thema, 7 Zwischenspiel, 9 Einsatz (a), 10 Einsatz (e), 13 Zwischenspiel, 15 Einsatz (F), 16 Einsatz (d), 19 Zwischenspiel, 21 Einsatz (G), 22 Einsatz (a), 25 Zwischenspiel, 27 Einsatz (e), 28 Einsatz (F), 31 Zwischenspiel, 33 Engführung (C), 36 Kadenz
+Schluss: Engführung im Abstand von 1 Takten; 13 von 13 Einsätzen wiedergefunden
+0 Verbot(e), Kosten 1246 aus 284 Präferenz(en).
+Kennzahlen in Bachs Bändern: 25 von 29 (Maßstab 18.0)
+Außerhalb: Notenwerte: Viertel und länger; Melodik: Tritonussprung; Schläge mit Dissonanz; Außenstimmen: gleiche Richtung

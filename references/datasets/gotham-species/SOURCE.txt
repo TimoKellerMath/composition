@@ -1,0 +1,4 @@
+Source: https://github.com/MarkGotham/species
+Commit: 5c7cae40422bd5ed897a2be3b916a7bc1a2a2df7
+Retrieved: 2026-10-18
+Copied: LICENSE, README.md, corpus.json, */data.tsv, */sp*/*.krn, */sp*/*.json, source_pdf/

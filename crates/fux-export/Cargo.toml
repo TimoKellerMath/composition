@@ -1,0 +1,20 @@
+[package]
+name = "fux-export"
+description = "LilyPond, PDF/SVG and MIDI export for fux-core scores"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+fux-core.workspace = true
+midly.workspace = true
+roxmltree.workspace = true
+thiserror.workspace = true
+
+[dev-dependencies]
+insta.workspace = true
+
+[lints]
+workspace = true

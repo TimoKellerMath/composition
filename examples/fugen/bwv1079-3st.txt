@@ -1,0 +1,8 @@
+Fuge über Musikalisches Opfer, BWV 1079, Thema regium, c-Moll
+c 4/4, 3 Stimmen, 68 Takte, 806 Töne (320 vorgegeben), 3.7 s
+Antwort: g''2 bes''2 d'''2 es'''2 fis''2 r4 d'''4 cis'''2 c'''2 b''2 bes''2. a''4 as''4 g''4 fis''4 e''8 d''8 g''4 c'''4 bes''2 a''2 g''4 (real)
+Takte: 1 Thema, 10 Antwort, 19 Codetta, 20 Thema, 29 Zwischenspiel, 32 Einsatz (Eb), 41 Zwischenspiel, 44 Einsatz (f), 53 Zwischenspiel, 56 Engführung (c), 66 Kadenz
+Schluss: Engführung im Abstand von 1 Takten; 7 von 7 Einsätzen wiedergefunden
+0 Verbot(e), Kosten 1928 aus 385 Präferenz(en).
+Kennzahlen in Bachs Bändern: 25 von 29 (Maßstab 18.0)
+Außerhalb: Melodik: chromatischer Halbton; Melodik: Tritonussprung; Schläge mit Dissonanz; Akkordbezug: übrige Figuren

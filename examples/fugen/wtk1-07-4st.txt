@@ -1,0 +1,8 @@
+Fuge über WTK I/7, BWV 852, Es-Dur
+Eb 4/4, 4 Stimmen, 35 Takte, 1178 Töne (424 vorgegeben), 12.5 s
+Antwort: es''16 d''16 c''16 d''16 bes'16 es''16 d''16 es''16 g''8 f''8 r8 d''16 bes'16 as''8 g''8 f''4 es''16 (tonal)
+Takte: 1 Thema, 3 Antwort, 5 Codetta, 6 Thema, 8 Antwort, 10 Zwischenspiel, 12 Einsatz (c), 14 Einsatz (g), 16 Zwischenspiel, 18 Einsatz (Ab), 20 Einsatz (f), 22 Zwischenspiel, 24 Einsatz (Bb), 26 Einsatz (c), 28 Zwischenspiel, 30 Engführung (Eb), 33 Kadenz
+Schluss: Engführung im Abstand von 1 Takten; 12 von 12 Einsätzen wiedergefunden
+0 Verbot(e), Kosten 1594 aus 373 Präferenz(en).
+Kennzahlen in Bachs Bändern: 21 von 29 (Maßstab 18.0)
+Außerhalb: Notenwerte: Viertel und länger; Melodik: Sekunde; Melodik: Richtungswechsel; Schläge mit Dissonanz; Satz: gleichzeitige Anschläge; Stimmkreuzungen je 100 Schläge; Außenstimmen: Seitenbewegung; Außenstimmen: gleiche Richtung

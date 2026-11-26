@@ -1,0 +1,53 @@
+[workspace]
+resolver = "3"
+members = ["crates/*"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.88"
+license = "MIT"
+repository = "https://github.com/TimoKellerMath/composition"
+
+[workspace.dependencies]
+# Without the parallel search, for WebAssembly; the programs switch it on.
+fux-core = { path = "crates/fux-core", default-features = false }
+fux-export = { path = "crates/fux-export" }
+fux-cli = { path = "crates/fux-cli", default-features = false }
+anyhow = "1.0"
+clap = { version = "4.6", features = ["derive"] }
+criterion = { version = "0.8", default-features = false, features = ["cargo_bench_support"] }
+insta = "1.49"
+# Without rayon: MIDI files are small, and WebAssembly has no threads.
+midly = { version = "0.5", default-features = false, features = ["std"] }
+rayon = "1.12"
+roxmltree = "0.21"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+# Up to six voices inline, without a heap vector per slice of a score.
+smallvec = "1.16"
+thiserror = "2.0"
+toml = "1.1"
+
+[workspace.lints.rust]
+unsafe_code = "forbid"
+
+# The search is the heavy part; even debug builds and tests should run it quickly.
+[profile.dev]
+opt-level = 1
+
+# The search runs about 6 % faster natively and 4 to 7 % in WebAssembly when the core is one
+# codegen unit; a release build after a change in fux-core then takes about twice as long. The
+# other crates (egui, wgpu) still build in parallel.
+[profile.release.package.fux-core]
+codegen-units = 1
+
+# The module of the web page (tools/build_web.sh): release, the core in one codegen unit too, but
+# without the name section, which only names the functions in stack traces and makes up an eighth
+# of the module. Fat LTO is left out: Cargo applies it to fux-web only when that is built as a
+# cdylib alone, and so built the module was 12 % larger and its search in Deno no faster
+# (docs/plan.md). Not named web: a build with such a profile but without --target would write into
+# target/web, the page.
+[profile.wasm]
+inherits = "release"
+strip = "symbols"

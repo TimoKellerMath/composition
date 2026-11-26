@@ -1,0 +1,8 @@
+Fuge über WTK II/20, BWV 889, a-Moll
+a 4/4, 3 Stimmen, 36 Takte, 540 Töne (191 vorgegeben), 6.9 s
+Antwort: r4 a'4 g'4 c''4 dis'4 r4 r8 a'8 fis'8 b'8 g'8 (tonal)
+Takte: 1 Thema, 3 Antwort, 5 Codetta, 6 Thema, 8 Zwischenspiel, 10 Einsatz (C), 12 Einsatz (G), 15 Zwischenspiel, 17 Einsatz (d), 19 Einsatz (F), 22 Zwischenspiel, 24 Einsatz (e), 26 Einsatz (C), 29 Zwischenspiel, 31 Schlusseinsatz (a), 34 Kadenz
+Schluss: Orgelpunkt; 10 von 10 Einsätzen wiedergefunden
+0 Verbot(e), Kosten 916 aus 223 Präferenz(en).
+Kennzahlen in Bachs Bändern: 17 von 29 (Maßstab 18.0)
+Außerhalb: Notenwerte: Achtel; Melodik: Sekunde; Melodik: Terz; Melodik: Quarte und Quinte; Melodik: größere Sprünge; Melodik: Richtungswechsel; Schläge mit Dissonanz; Akkordbezug: Akkordton; Akkordbezug: Durchgang; Akkordbezug: Vorhalt; Akkordbezug: übrige Figuren; Satz: gleichzeitige Anschläge

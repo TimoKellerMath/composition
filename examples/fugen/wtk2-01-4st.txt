@@ -1,0 +1,8 @@
+Fuge über WTK II/1, BWV 870, C-Dur
+C 2/4, 4 Stimmen, 47 Takte, 876 Töne (366 vorgegeben), 18.3 s
+Antwort: r8 c''16 c''16 c''8 g'8 e''4 d''4 r8 c''16 b'16 c''16 d''16 b'16 c''16 a'16 c''16 b'16 c''16 d''16 e''16 c''16 d''16 b'16 (tonal)
+Takte: 1 Thema, 5 Antwort, 9 Codetta, 10 Thema, 14 Antwort, 18 Zwischenspiel, 22 Einsatz (a), 27 Zwischenspiel, 31 Einsatz (F), 36 Zwischenspiel, 40 Schlusseinsatz (C), 45 Kadenz
+Schluss: Orgelpunkt; 7 von 7 Einsätzen wiedergefunden
+0 Verbot(e), Kosten 1227 aus 269 Präferenz(en).
+Kennzahlen in Bachs Bändern: 21 von 29 (Maßstab 18.0)
+Außerhalb: Notenwerte: Sechzehntel und kürzer; Notenwerte: Achtel; Noten je Stimme und Viertel; Melodik: Richtungswechsel; Schläge mit Dissonanz; Akkordbezug: übrige Figuren; Satz: gleichzeitige Anschläge; Außenstimmen: gleiche Richtung

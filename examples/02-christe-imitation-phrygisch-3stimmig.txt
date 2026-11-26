@@ -1,0 +1,12 @@
+phrygisch – freier Satz, 3 Stimmen, 27 Takte, seed 10
+Text: Christe (6 Silben, 1 Sinnabschnitt), Wiederholung auto
+Binnenschlüsse: Takt 16 auf A: …e-lé-i-son.
+Punkt 1 („Chri-ste e-lé-i-son.“): Alt T. 1 E4 · Tenor T. 5 A3 (Unterquinte) · Bass T. 9 E3 (Unteroktave); Kopf 6–7 Töne, real; Binnenschluss T. 16 auf A
+Punkt 2 („e-lé-i-son.“): Tenor T. 16½ E4 · Bass T. 20½ E3 (Unteroktave); Kopf 7 Töne, real; Schluss T. 27 auf E
+ 1. Kosten 25
+      Alt: E4 | G4 F4 | E4 F4 | E4 | C4~ | C4 D4 | F4 G4 | A4 F4 | G4 F4 | E4 F4 | G4 E4 D4~ | D4 C4 | E4 D4 C4~ | C4 B3 A3~ | A3 G#3 | A3 | r | r | r | G4 E4~ | E4 D4 C4~ | C4 B3 C4 | D4 B3~ | B3 B3 D4~ | D4 E4 E4~ | E4 D4 | E4
+        Text: Chri-ste e-lé-i-son. e-lé-i-son. e-lé-i-son.
+      Tenor: r | r | r | r | A3 | C4 B3 | A3 B3 | A3 | B3 B3~ | B3 G3 A3 | B3 C4 A3~ | A3 G3 F3 | G3 A3 | F3 | r | r E4 | F4 E4~ | E4 D4 E4 | D4 | B3 C4 | A3 G3 | B3 | r | r | B3 B3 | A3 A3 | G#3
+        Text: Chri-ste e-lé-i-son. e-lé-i-son. e-lé-i-son.
+      Bass: r | r | r | r | r | r | r | r | E3 | G3 F3 | E3 F3 | E3 | C3 | D3 F3 | E3 | A2 | D3 C3 | B2 C3 | G3 | r E3 | F3 E3~ | E3 D3 E3 | D3 | B2 A2 | B2 E3 | F3 | E3
+        Text: Chri-ste e-lé-i-son. Chri-ste e-lé-i-son.

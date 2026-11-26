@@ -1,0 +1,8 @@
+Fuge über WTK II/2, BWV 871, c-Moll
+c 4/4, 3 Stimmen, 41 Takte, 957 Töne (337 vorgegeben), 4.5 s
+Antwort: r8 c''8 bes'8 c''8 c''8 g'8 c''8 bes'16 a'16 bes'4 (tonal)
+Takte: 1 Thema, 2 Antwort, 3 Codetta, 4 Thema, 5 Zwischenspiel, 7 Einsatz (Eb), 8 Einsatz (Bb), 10 Zwischenspiel, 12 Einsatz (f), 13 Einsatz (Ab), 15 Zwischenspiel, 17 Einsatz (g), 18 Einsatz (Eb), 20 Zwischenspiel, 22 Einsatz (Bb), 23 Einsatz (f), 25 Zwischenspiel, 27 Einsatz (Ab), 28 Einsatz (g), 30 Zwischenspiel, 32 Einsatz (Eb), 33 Einsatz (Bb), 35 Zwischenspiel, 37 Schlusseinsatz (c), 39 Kadenz
+Schluss: Orgelpunkt; 16 von 16 Einsätzen wiedergefunden
+0 Verbot(e), Kosten 1050 aus 239 Präferenz(en).
+Kennzahlen in Bachs Bändern: 27 von 29 (Maßstab 18.0)
+Außerhalb: Schläge mit Dissonanz; Satz: Pausenanteil

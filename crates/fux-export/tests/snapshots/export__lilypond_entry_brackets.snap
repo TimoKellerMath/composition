@@ -1,0 +1,49 @@
+---
+source: crates/fux-export/tests/export.rs
+expression: text
+---
+\version "2.24.0"
+\language "nederlands"
+
+\header {
+  title = "Imitation"
+  tagline = ##f
+}
+
+\paper {
+  #(set-paper-size "a4")
+}
+
+\layout {
+  \context {
+    \Lyrics
+    \override LyricHyphen.minimum-distance = #0.5
+    \override VerticalAxisGroup.nonstaff-unrelatedstaff-spacing.minimum-distance = #7
+  }
+}
+
+\score {
+  \header { piece = "dorisch" }
+  \new StaffGroup <<
+    \new Staff = "staff0" \with { instrumentName = "Sopran" shortInstrumentName = "S" }
+    \new Voice = "voice0" {
+      \key d \dorian \time 2/2 \clef "treble"
+      a'1\startGroup^\markup \small "1" | a'2 bes'2 | c''2 bes'2 | a'1\stopGroup | g'1 | f'1 | r2 a'2\startGroup^\markup \small "2" | b'2 a'2\stopGroup
+      \bar "|."
+    }
+    \new Staff = "staff1" \with { instrumentName = "Alt" shortInstrumentName = "A" }
+    \new Voice = "voice1" {
+      \key d \dorian \time 2/2 \clef "treble"
+      r1 | d'1\startGroup^\markup \small "1" | d'2 e'2 | f'1~ | f'2\stopGroup e'2 | cis'2 r2 | d'2\startGroup^\markup \small "2" e'2 | d'1\stopGroup
+      \bar "|."
+    }
+  >>
+  \layout {
+    \context {
+      \Voice
+      \consists "Horizontal_bracket_engraver"
+      \override HorizontalBracket.direction = #UP
+      \override TextScript.outside-staff-priority = #1000
+    }
+  }
+}

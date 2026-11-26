@@ -1,0 +1,58 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+      - uses: Swatinem/rust-cache@v2
+      # The GUI plays sound through ALSA.
+      - run: sudo apt-get update && sudo apt-get install -y libasound2-dev
+      - run: cargo fmt --all --check
+      - run: cargo clippy --workspace --all-targets -- -D warnings
+      - run: cargo test --workspace
+
+  # The web version: the WebAssembly module and the page, tested in Node.js; the page as an
+  # artifact.
+  web:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: wasm32-unknown-unknown
+      - uses: Swatinem/rust-cache@v2
+      - run: tools/build_web.sh
+      - run: node web/smoke-test.mjs target/web/fux_web.wasm
+      - run: node web/page-test.mjs target/web/fux_web.wasm
+      - uses: actions/upload-artifact@v4
+        with:
+          name: web
+          path: target/web
+
+  # The page for fugues (fux-fuge): its WebAssembly module and the page, tested in Node.js.
+  web-fuge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: wasm32-unknown-unknown
+      - uses: Swatinem/rust-cache@v2
+      - run: tools/build_web_fuge.sh
+      - run: node web-fuge/smoke-test.mjs target/web-fuge/fuge_web.wasm
+      - run: node web-fuge/page-test.mjs target/web-fuge/fuge_web.wasm
+      - uses: actions/upload-artifact@v4
+        with:
+          name: web-fuge
+          path: target/web-fuge

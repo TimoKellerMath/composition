@@ -1,0 +1,8 @@
+Fuge über Orgelfuge BWV 578, g-Moll
+g 4/4, 4 Stimmen, 47 Takte, 1415 Töne (492 vorgegeben), 15.5 s
+Antwort: d''4 g''4 f''4. e''8 d''8 f''8 e''8 d''8 cis''8 e''8 a'4 d''8 a'8 e''8 a'8 f''8 e''16 d''16 e''8 a'8 d''8 a'16 d''16 e''8 a'16 e''16 f''8 e''16 d''16 e''16 a'16 a''16 g''16 f''16 e''16 d''16 f''16 e''16 d''16 cis''16 e''16 d''8 (tonal)
+Takte: 1 Thema, 6 Antwort, 11 Codetta, 12 Thema, 17 Antwort, 22 Zwischenspiel, 24 Einsatz (Bb), 29 Zwischenspiel, 31 Einsatz (c), 36 Zwischenspiel, 38 Engführung (g), 45 Kadenz
+Schluss: Engführung im Abstand von 2 Takten; 8 von 8 Einsätzen wiedergefunden
+0 Verbot(e), Kosten 1279 aus 326 Präferenz(en).
+Kennzahlen in Bachs Bändern: 23 von 29 (Maßstab 18.0)
+Außerhalb: Notenwerte: Viertel und länger; Schläge mit Dissonanz; Satz: gleichzeitige Anschläge; Stimmkreuzungen je 100 Schläge; Außenstimmen: Seitenbewegung; Klang: vollständiger Dreiklang

@@ -1,0 +1,24 @@
+[package]
+name = "fux-bach-web"
+description = "The web version of fux-fuge: a WebAssembly module that answers JSON requests"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+publish = false
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+# Without the programs: no threads, so it compiles to WebAssembly.
+fux-bach = { path = "../fux-bach", default-features = false }
+
+[dev-dependencies]
+serde_json.workspace = true
+
+# Not the workspace's lints: the exports for JavaScript need `#[unsafe(no_mangle)]`, allowed in
+# `ffi` only.
+[lints.rust]
+unsafe_code = "deny"

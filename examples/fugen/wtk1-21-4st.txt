@@ -1,0 +1,8 @@
+Fuge über WTK I/21, BWV 866, B-Dur
+Bb 3/4, 4 Stimmen, 44 Takte, 1151 Töne (518 vorgegeben), 8.6 s
+Antwort: r8 bes'8 d''8 bes'8 f''8 a'8 g'8 e''16 d''16 f''16 e''16 d''16 c''16 g''8 bes'8 a'8 f''16 g''16 e''16 f''16 g''16 a''16 bes''16 a''16 g''16 bes''16 a''16 g''16 f''16 g''16 e''16 f''16 g''16 a''16 bes''16 a''16 g''16 bes''16 a''8. (tonal)
+Takte: 1 Thema, 5 Antwort, 9 Codetta, 10 Thema, 14 Antwort, 18 Zwischenspiel, 21 Einsatz (g), 26 Zwischenspiel, 29 Einsatz (Eb), 34 Zwischenspiel, 37 Schlusseinsatz (Bb), 42 Kadenz
+Schluss: Orgelpunkt; 7 von 7 Einsätzen wiedergefunden
+0 Verbot(e), Kosten 1572 aus 353 Präferenz(en).
+Kennzahlen in Bachs Bändern: 24 von 29 (Maßstab 18.0)
+Außerhalb: Notenwerte: Viertel und länger; Melodik: Richtungswechsel; Schläge mit Dissonanz; Satz: gleichzeitige Anschläge; Stimmkreuzungen je 100 Schläge
